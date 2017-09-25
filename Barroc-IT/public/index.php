@@ -18,16 +18,32 @@ require ('head.php');
             </div>
             <div class="form-group">
                 <input type="submit" value="submit" class="btn btn-primary">
-                
-            </div>
-        </form>
-        <button onclick="switchH()" onload="onOff()">
+                <button type="button" onclick="switchH()">
                     <div class="helpf">
-                        <p id="temp">?</p>
+                        <p>?</p>
                     </div>
                 </button>
-        <div class="help" id="help">
-            <p>test</p>
+            </div>
+        </form>
+        <div class="helptxt" id="hidden">
+            <div class="helptxtnl">
+                <p><b>Inloggen</b></p>
+                <p>
+                    Wanneer je de website opzoekt vindt je het log-in scherm.
+                    Hier vul je de inlog gegevens van jouw afdeling in die je
+                    Zou moeten hebben gehad van het bedrijf. Als je dit niet
+                    hebt gehad neem dan contact op met je afdelings-manager.
+                </p>
+            </div>
+            <div class="helptxten">
+                <p><b>Log-in</b></p>
+                <p>
+                    When you search for the website you will find a log-in screen.
+                    You need to put the log-in data of your department in the 
+                    input fields. If you don't have that, please contact your
+                    departement-manager.
+                </p>
+            </div>
         </div>
     </div>
 </div>
@@ -40,28 +56,22 @@ require ('foot.php');
 ?>
 
 <script>
-function onOff{
-    $onOff = false;
-}
 
-function switchH{
-    if ($onOff == true) {
-        $onOff = false;
-        helpMeOff();
+function switchH(){
+    if (document.getElementsByClassName("helptxt")[0].id == "hidden") {
+        HtS();
+    }else{
+        StH();
     }
-    else{
-        $onOff = true;
-        helpMeOn();
-    }
-    document.getElementById("temp").innerHTML = "test";
 }
 
-function helpMeOn(){
-    document.getElementById('help').style.visibility="visible";
+function StH(){
+    $('div#shown').attr("id", "hidden");
 }
 
-function helpMeOff(){
-    document.getElementById('help').style.visibility="hidden";
+function HtS(){
+    $('div#hidden').attr("id", "shown");
 }
+
 
 </script>

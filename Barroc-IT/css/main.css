@@ -95,14 +95,19 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+body{
+    background-image: url('../img/jumbotron.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 .jumbotron {
-    position: relative;
     margin-top: 0px;
-    background: url('../img/jumbotron.jpg') no-repeat;
-    /*background-size: 100%;*/
-    background-size: cover;
+    /*background-size: 100%;
+    background-size: cover;*/
     height: 600px;
     margin-bottom: 0px;
+    background: none;
 }
 
 .jumbotron .container h1 {
@@ -113,6 +118,7 @@ textarea {
 }
 
 .text_1 {
+    margin: 0 auto;
     margin-top: 110px;
     margin-bottom: 10px;
 }
@@ -148,6 +154,12 @@ input.form-control, textarea.form-control {
 
 .form-group:Last-Of-Type{
     margin-bottom: 0;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: row;
 }
 
 .jumbo-login {
@@ -155,6 +167,62 @@ input.form-control, textarea.form-control {
     background-position: -40px 0px;
 }
 
+button{
+    visibility: hidden;
+}
+
+.helpf{
+    visibility: visible;
+    width: 25px;
+    height: 25px;
+    background: #CFC1B5;
+    border-radius: 12.5px;
+    margin-top: 0px;
+    padding: 0;
+    border: none;
+    padding-top: -2px;
+    color: #275d8b;
+}
+
+.helpf:hover{
+    transition: .5s;
+    background: #275d8b;
+    color: #CFC1B5;
+}
+
+.jumbotron button p{
+    font-size: 19px;
+}
+
+#hidden{
+    visibility: hidden;
+}
+
+.helptxt{
+    background: #36D664;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.jumbotron .helptxt p{
+    font-size: 12px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.helptxten{
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: solid 2px black;
+}
+
+@media only screen and (min-width: 992px){
+    .helptxt{
+        width: 300px;
+        float: right;
+        margin-top: 50px;
+    }
+}
 
 
 
