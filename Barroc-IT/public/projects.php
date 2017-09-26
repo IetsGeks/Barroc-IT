@@ -21,7 +21,7 @@ require ('head.php');
         <h3>projects</h3>
         <div class="row-projects">
             <div>
-                <h5>ordernumber</h5>
+                <h4>ordernumber</h4>
                     <ol>
                         <li></li>
                         <li></li>
@@ -32,7 +32,7 @@ require ('head.php');
             </div>
 
             <div>
-                <h5>name customer</h5>
+                <h4>name customer</h4>
                 <ul>
                     <li>jacobs</li>
                     <li>smits</li>
@@ -43,15 +43,36 @@ require ('head.php');
             </div>
 
             <div>
-                <h5>project price</h5>
+                <h4>project price</h4>
+                <ul>
+                    <li>€1200,-</li>
+                    <li>€900,-</li>
+                    <li>€450,-</li>
+                    <li>€680,-</li>
+                    <li>€740,-</li>
+                </ul>
             </div>
 
             <div>
-                <h5>project name</h5>
+                <h4>project name</h4>
+                <ul>
+                    <li>pc4u</li>
+                    <li>barroc-it</li>
+                    <li>deze drie</li>
+                    <li>fifa</li>
+                    <li>de gokker</li>
+                </ul>
             </div>
 
             <div>
-                <h5>change</h5>
+                <h4>change</h4>
+                <ul>
+                    <li><a href="">change</a></li>
+                    <li><a href="">change</a></li>
+                    <li><a href="">change</a></li>
+                    <li><a href="">change</a></li>
+                    <li><a href="">change</a></li>
+                </ul>
             </div>
 
         </div>
