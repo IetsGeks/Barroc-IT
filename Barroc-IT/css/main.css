@@ -105,10 +105,11 @@ body{
     background-size: cover;*/
     height: 600px;
     margin-bottom: 0px;
-     background-image: url('../img/jumbotron.jpg');
+    background-image: url('../img/jumbotron.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    height: 100vh;
 }
 
 .jumbotron .container h1 {
@@ -232,6 +233,20 @@ button{
 
 
 /*=========sales========*/
+.nav-bar ul li a{
+    color: #5e5848;
+    font-size: 20px;
+    
+}
+.nav-bar ul li{
+    display: inline-block;
+    padding: 5px;
+}
+.nav-bar {
+    
+}
+
+
 .header-sales{
     background-color: #808080;
     height: 100px;
