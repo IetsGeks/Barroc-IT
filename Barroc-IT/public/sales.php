@@ -2,7 +2,7 @@
 require ('../app/database.php');
 require ('head.php');
 ?>
-    <header>
+    <header class="header-sales">
         <div class="row">
             <div> <ul class="row">
                     <li><a href="">Home</a></li>
