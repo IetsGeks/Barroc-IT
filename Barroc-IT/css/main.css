@@ -96,10 +96,7 @@ textarea {
    ========================================================================== */
 
 body{
-    background-image: url('../img/jumbotron.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+   
 }
 
 .jumbotron {
@@ -108,7 +105,10 @@ body{
     background-size: cover;*/
     height: 600px;
     margin-bottom: 0px;
-    background: none;
+     background-image: url('../img/jumbotron.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .jumbotron .container h1 {
@@ -236,19 +236,33 @@ header{
     background-color: #808080;
     height: 100px;
 }
-h3{
+.container-sales{
+    margin-top: 3%;
+}
+.department{
+    margin-top: 1%;
+}
+.department h3{
+    color: white;
     text-transform: uppercase;
-    font-size: 1.5em;
-    font-family: "arial";
-    margin : 0px;
-    text-align: center;
-    padding-top: 2.8%;
+    font-weight: bold;
+}
+.row ul{
+    margin-top: 10%;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+ol{
+    padding-left: 14px;
 }
 .row li{
     list-style-type: none;
     border-radius: 2px;
     border: 2px solid #808080;
     padding: 1%;
+    margin: 0 20px;
 }
 .row{
     display: -webkit-flex;
@@ -257,9 +271,26 @@ h3{
     display: -o-flex;
     display: flex;
     justify-content: space-between;
+    margin-top: 0px;
+}
+.row li a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.row input{
+    height: 40px;
     margin-top: 2%;
 }
-
+.row-projects{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
