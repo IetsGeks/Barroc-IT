@@ -5,8 +5,8 @@ require ('head.php');
     <header class="header-sales">
         <div class="row">
             <div> <ul class="row">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Projects</a></li>
+                    <li><a href="sales.php">Home</a></li>
+                    <li><a href="projects.php">Projects</a></li>
                     <li><a href="">customers</a></li>
                 </ul>
             </div>
@@ -17,44 +17,7 @@ require ('head.php');
             
         </div>
     </header>
-    <div class="container container-sales">
-        <div class="row-projects">
-            <div>
-                <h5>ordernumber</h5>
-                    <ol>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ol>
-            </div>
 
-            <div>
-                <h5>name customer</h5>
-                <ul>
-                    <li>jacobs</li>
-                    <li>smits</li>
-                    <li>jansen</li>
-                    <li>tiny</li>
-                    <li>lau</li>
-                </ul>
-            </div>
-
-            <div>
-                <h5>project price</h5>
-            </div>
-
-            <div>
-                <h5>project name</h5>
-            </div>
-
-            <div>
-                <h5>change</h5>
-            </div>
-
-        </div>
-    </div>
 <?php
 require ('foot.php');
 ?>
