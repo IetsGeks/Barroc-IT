@@ -99,6 +99,7 @@ body{
     background-image: url('../img/jumbotron.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: cover;
 }
 
 .jumbotron {
