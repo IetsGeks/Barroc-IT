@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
@@ -10,7 +9,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+
     <!-- Styles -->
     <style>
         *{
@@ -99,15 +98,28 @@
 </head>
 <body>
 <header class="header-sales">
-        <ul class="row">
-            <li><a href="{{url('/sales')}}">Home</a></li>
-            <li><a href="{{url('/projects')}}">Projects</a></li>
-            <li><a href="{{url('/customers')}}">customers</a></li>
-        </ul>
+    <ul class="row">
+        <li><a href="{{url('/')}}">Home</a></li>
+        <li><a href="{{url('/projects')}}">Projects</a></li>
+        <li><a href="{{url('/sales')}}">sales</a></li>
+    </ul>
 </header>
 <div class="department">
-    <h3>sales department</h3>
+    <h3>customers</h3>
 </div>
+    <div class="row">
+        <form action="#" class="form-control">
+            <label for="first_name">first Name</label>
+            <input type="text" name="first_name" id="first_name">
+            <br>
+            <label for="last_name">Last Name</label>
+            <input type="text" name="last_name" id="last_name">
+            <br>
+            <label for="company_name">Company Name</label>
+            <input type="text" name="company_name" id="company_name">
+            <br>
+        </form>
+    </div>
 
 </body>
 </html>

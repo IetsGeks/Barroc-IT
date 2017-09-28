@@ -9,17 +9,117 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+    <link rel="stylesheet" href="../../public/css/app.css">
     <!-- Styles -->
+    <style>
+        *{
+            font-family: 'Arial';
+        }
+        body{
+            margin: 0;
+        }
+        .nav-bar ul li a{
+            color: #5e5848;
+            font-size: 20px;
 
+        }
+        .nav-bar ul li{
+            display: inline-block;
+            padding: 5px;
+        }
+        .header-sales{
+            background-color: #808080;
+            height: 100px;
+        }
+        .form-underneath{
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        h3{
+            text-align: center;
+            font-size: 2em;
+            text-transform: uppercase;
+            margin-top:5%;
+        }
+        h4{
+            text-transform: uppercase;
+            color: #CFC1B5;
+        }
+        .container-sales{
+            margin-top: 2%;
+        }
+        .department{
+            margin-top: 1%;
+        }
+        .department h3{
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .row-projects-nav ul{
+            margin-top: 10%;
+        }
+        ul{
+            list-style-type: none;
+            padding: 0;
+        }
+        ol{
+            padding-left: 14px;
+        }
+        .row li{
+            list-style-type: none;
+            border-radius: 2px;
+            border: 2px solid #808080;
+            padding: 1%;
+            margin: 0 20px;
+        }
+        .row{
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0px;
+        }
+        .row li a{
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .row input{
+            height: 40px;
+            margin-top: 2%;
+        }
+        .row-projects{
+            display: flex;
+            justify-content: space-around;
+        }
+        footer{
+            background-color: #808080;
+            height: 60px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 1rem;
+            text-align: center;
+        }
+        .row-projects-nav{
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
 </head>
 <body>
 <header class="header-sales">
-    <div class="row">
-        <div> <ul class="row">
+    <div class="row-projects-nav">
+        <div>
+            <ul class="row">
                 <li><a href="{{url('/')}}">Home</a></li>
                 <li><a href="{{url('/sales')}}">Sales</a></li>
-                <li><a href="">customers</a></li>
+                <li><a href="{{url('/customers')}}">customers</a></li>
             </ul>
         </div>
 
