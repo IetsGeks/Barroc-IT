@@ -1,77 +1,60 @@
 <?php
-require ('../app/database.php');
-require ('head.php');
-?>
 
-<div class="jumbotron jumbo-login">
-    <div class="container">
-        <h1 class="text_1 text-center">BARROC IT. </h1>
-        <form action="" class="form-login col-md-4 col-md-offset-4">
-            <legend class="subhead">Please Log in</legend>
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" class="form-control">
-            </div>
-            <div class="form-group">
-                <input type="submit" value="submit" class="btn btn-primary">
-                <button type="button" onclick="switchH()">
-                    <div class="helpf">
-                        <p>?</p>
-                    </div>
-                </button>
-            </div>
-        </form>
-        <div class="helptxt" id="hidden">
-            <div class="helptxtnl">
-                <p><b>Inloggen</b></p>
-                <p>
-                    Wanneer je de website opzoekt vindt je het log-in scherm.
-                    Hier vul je de inlog gegevens van jouw afdeling in die je
-                    Zou moeten hebben gehad van het bedrijf. Als je dit niet
-                    hebt gehad neem dan contact op met je afdelings-manager.
-                </p>
-            </div>
-            <div class="helptxten">
-                <p><b>Log-in</b></p>
-                <p>
-                    When you search for the website you will find a log-in screen.
-                    You need to put the log-in data of your department in the 
-                    input fields. If you don't have that, please contact your
-                    departement-manager.
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
+/**
+ * Laravel - A PHP Framework For Web Artisans
+ *
+ * @package  Laravel
+ * @author   Taylor Otwell <taylor@laravel.com>
+ */
 
+define('LARAVEL_START', microtime(true));
 
+/*
+|--------------------------------------------------------------------------
+| Register The Auto Loader
+|--------------------------------------------------------------------------
+|
+| Composer provides a convenient, automatically generated class loader for
+| our application. We just need to utilize it! We'll simply require it
+| into the script here so that we don't have to worry about manual
+| loading any of our classes later on. It feels great to relax.
+|
+*/
 
+require __DIR__.'/../vendor/autoload.php';
 
-<?php
-require ('foot.php');
-?>
+/*
+|--------------------------------------------------------------------------
+| Turn On The Lights
+|--------------------------------------------------------------------------
+|
+| We need to illuminate PHP development, so let us turn on the lights.
+| This bootstraps the framework and gets it ready for use, then it
+| will load up this application so that we can run it and send
+| the responses back to the browser and delight our users.
+|
+*/
 
-<script>
+$app = require_once __DIR__.'/../bootstrap/app.php';
 
-function switchH(){
-    if (document.getElementsByClassName("helptxt")[0].id == "hidden") {
-        HtS();
-    }else{
-        StH();
-    }
-}
+/*
+|--------------------------------------------------------------------------
+| Run The Application
+|--------------------------------------------------------------------------
+|
+| Once we have the application, we can handle the incoming request
+| through the kernel, and send the associated response back to
+| the client's browser allowing them to enjoy the creative
+| and wonderful application we have prepared for them.
+|
+*/
 
-function StH(){
-    $('div#shown').attr("id", "hidden");
-}
+$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
-function HtS(){
-    $('div#hidden').attr("id", "shown");
-}
+$response = $kernel->handle(
+    $request = Illuminate\Http\Request::capture()
+);
 
+$response->send();
 
-</script>
+$kernel->terminate($request, $response);
