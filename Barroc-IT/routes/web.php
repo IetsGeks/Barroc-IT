@@ -32,3 +32,16 @@ Route::get('/projects', function () {
 Route::get('/customers', function (){
     return view('customers');
 });
+Route::get('/add-customer', function (){
+    return view('add-customer');
+});
+Route::post('/add-customer', function (\Illuminate\Http\Request $request) {
+    dd($request->all());
+});
+Route::get('/search-customer', function (){
+    return view('search-customer');
+});
+Route::get('/search-outcome', function (){
+    return view('search-outcome');
+});
+
