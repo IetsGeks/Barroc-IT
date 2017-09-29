@@ -1,0 +1,24 @@
+button{
+    width: 25px;
+    background: #808080;
+    border: none;
+}
+button:hover{
+    background: red;
+}
+.customers{
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.customers ul li{
+    margin-top: 1%;
+}
+.customers ul li:first-of-type{
+    margin-left: 58%;
+}
+h3{
+    margin: 0;
+}
