@@ -33,8 +33,5 @@
     <p>choose between projects, to add a new project or view a project status</p>
     <p>or choose for customers to search customers, add a new customer or set an customer inactive</p>
 </div>
-<footer>
-    <p>groep3&copy;</p>
-</footer>
 </body>
 </html>

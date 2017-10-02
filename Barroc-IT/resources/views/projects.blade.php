@@ -93,10 +93,6 @@
 
     </div>
 </div>
-
-<footer>
-    <p>groep3&copy;</p>
-</footer>
 </body>
 </html>
 
