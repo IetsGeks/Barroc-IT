@@ -20,15 +20,6 @@ Route::get('/sales', function () {
 Route::get('/projects', function () {
     return view('projects');
 });
-
-
-
-
-
-
-
-
-
 Route::get('/customers', function (){
     return view('customers');
 });

@@ -43,8 +43,5 @@
         <a href="{{url('/search-customer')}}">Search for a customer</a>
 
     </div>
-<footer>
-    <p>groep3&copy;</p>
-</footer>
 </body>
 </html>
