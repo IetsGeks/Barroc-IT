@@ -94,3 +94,7 @@ footer{
     display: flex;
     justify-content: space-around;
 }
+.department1 h3{
+    color: whitesmoke;
+    margin-top: 7%;
+}

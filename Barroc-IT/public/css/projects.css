@@ -12,13 +12,15 @@ h3{
 .container-sales{
     margin-top: 2%;
 }
-.department1{
-    margin-top: 1%;
+.container-sales h3{
+    color: #cfc1b5;
+    margin-bottom: 2%;
 }
 .department1 h3{
     color: white;
     text-transform: uppercase;
     font-weight: bold;
+    margin-top: 7%;
 }
 .row-projects-nav ul{
     margin-top: 10%;
@@ -28,6 +30,7 @@ h3{
     display: flex;
     justify-content: space-between;
     margin-top: 0px;
+
 }
 .row-projects{
     display: flex;
@@ -36,4 +39,28 @@ h3{
 .row-projects-nav{
     display: flex;
     justify-content: space-around;
+}
+.department1 h3{
+    color: whitesmoke;
+    margin-top: 7%;
+}
+#add-p {
+    border: 2px solid #808080;
+    text-decoration: none;
+    color: #000;
+    padding: 4px;
+}
+.add{
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
+}
+.row-projects ul li a{
+    text-decoration: none;
+}
+.row-projects ul li a:hover{
+    color: green;
+    text-transform: uppercase;
+
 }
