@@ -35,4 +35,7 @@ Route::get('/search-customer', function (){
 Route::get('/search-outcome', function (){
     return view('search-outcome');
 });
+Route::get('/template-home', function (){
+    return view('template-home');
+});
 

@@ -1,3 +1,8 @@
+/*===default===*/
+.row-spaced{
+    display: flex;
+    justify-content: space-around;
+}
 
 /*===HEADER===*/
 .header-sales{
@@ -16,7 +21,39 @@
     color: white;
 }
 
-.account h3{
-float: right;
+.department1 h3{
+    color: white;
+    font-size: 24px;
+}
 
+
+/*=========*/
+
+/*===banner===*/
+
+.banner {
+    display: flex;
+    justify-content: center;
+    height: 418px;
+
+}
+.banner h3 {
+    margin-top: 25%;
+}
+
+/*=========*/
+
+/*===footer===*/
+
+.row-footer{
+    display: flex;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+}
+.item{
+    width: 18%;
+}
+.row-footer p{
+    color: white;
 }
