@@ -18,8 +18,8 @@
 </head>
 <body>
 <header class="header-sales">
+    
     <ul class="row ul-customers">
-        <li><a href="{{url('/')}}">Home</a></li>
         <li><a href="{{url('/projects')}}">Projects</a></li>
         <li><a href="{{url('/sales')}}">sales</a></li>
     </ul>

@@ -21,7 +21,6 @@
     <div class="row-projects-nav">
         <div>
             <ul class="row">
-                <li><a href="{{url('/')}}">Home</a></li>
                 <li><a href="{{url('/sales')}}">Sales</a></li>
                 <li><a href="{{url('/customers')}}">customers</a></li>
             </ul>

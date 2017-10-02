@@ -11,10 +11,12 @@
 <body>
 <header class="header-sales">
     <ul class="row ul-customers">
-        <li><a href="{{url('/')}}">Home</a></li>
         <li><a href="{{url('/projects')}}">Projects</a></li>
         <li><a href="{{url('/customers')}}">Customers</a></li>
     </ul>
+    <div class="department1">
+        <h3>sales department</h3>
+    </div>
 </header>
     <h3>Search outcome</h3>
     <div class="customers">
