@@ -125,7 +125,7 @@ table{
     margin: 0 auto;
     padding: 150px 20px 20px 20px;
     background-color: #FFFFFF;
-    height: 100%;
+    height: inherit;
     position:absolute;
     bottom:0;
     left:0;
@@ -159,6 +159,7 @@ table{
 .error p:Last-Of-Type{
     font-size: 14px;
 }
-#hidden{
+#hidden, #hiddenER{
     visibility: hidden;
 }
+
