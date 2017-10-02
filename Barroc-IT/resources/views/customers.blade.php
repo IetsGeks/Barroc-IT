@@ -18,11 +18,16 @@
 </head>
 <body>
 <header class="header-sales">
-    
-    <ul class="row ul-customers">
-        <li><a href="{{url('/projects')}}">Projects</a></li>
-        <li><a href="{{url('/sales')}}">sales</a></li>
-    </ul>
+    <div class="row-projects-nav">
+        <ul class="row ul-customers">
+            <li><a href="{{url('/projects')}}">Projects</a></li>
+            <li><a href="{{url('/sales')}}">sales</a></li>
+        </ul>
+
+        <div class="department1">
+            <h3>sales department</h3>
+        </div>
+    </div>
 </header>
 <div class="department">
     <h3>customers</h3>

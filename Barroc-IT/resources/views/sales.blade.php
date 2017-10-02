@@ -28,8 +28,6 @@
             <h3>sales department</h3>
         </div>
     </div>
-
-
 </header>
 <div class="department">
     <h3>sales department</h3>

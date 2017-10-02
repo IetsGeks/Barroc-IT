@@ -7,18 +7,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('css/add-customer.css')}}">
     <link rel="stylesheet" href="{{asset('css/sales.css')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
 <header class="header-sales">
-    <ul class="row ul-customers">
-        <li><a href="{{url('/projects')}}">Projects</a></li>
-        <li><a href="{{url('/customers')}}">Customers</a></li>
-    </ul>
-    <div class="department1">
-        <h3>sales department</h3>
+    <div class="row-projects-nav">
+        <div>
+            <ul class="row ul-customers">
+                <li><a href="{{url('/projects')}}">Projects</a></li>
+                <li><a href="{{url('/customers')}}">Customers</a></li>
+            </ul>
+        </div>
+
+        <div class="department1">
+            <h3>sales department</h3>
+        </div>
     </div>
 </header>
-    <div class="form">
+    <div>
         <form action="" method="post" class="form">
             {{csrf_field()}}
             <label for="c_name">Company name</label>
@@ -47,7 +53,7 @@
             <input type="text" id="f-nmr">
             <label for="e-mail">E-mail</label>
             <input type="text" id="e-mail">
-            <input type="submit" value="Add customer">
+            <input type="submit" value="Add customer" class="btn-primary">
         </form>
     </div>
 </body>
