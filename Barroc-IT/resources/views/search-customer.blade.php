@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('css/searchC.css')}}">
+    <link rel="stylesheet" href="{{asset('css/helpF.css')}}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
@@ -77,21 +78,23 @@
         </div>
         <div class="helptxt" id="hidden">
             <div class="helptxtnl">
-                <p><b>Inloggen</b></p>
+                <p><b>klant zoeken</b></p>
                 <p>
-                    Wanneer je de website opzoekt vindt je het log-in scherm.
-                    Hier vul je de inlog gegevens van jouw afdeling in die je
-                    Zou moeten hebben gehad van het bedrijf. Als je dit niet
-                    hebt gehad neem dan contact op met je afdelings-manager.
+                    hier kan je met de zoek balk een klant op zoeken die je nodig hebt.
+                    als je zoekt zoek je op de punten die bovenaan gegeven staan. (id, contact, bedrijf, ect.)
+                    als je je klant hebt gevonden zal de klant een groen of roode agtergrong hebben.
+                    dit betekend of hij boven of onder het krediet staat.
+                    vervolgens kan je op de klant klicken om er meer informaatie over te krijgen.
                 </p>
             </div>
             <div class="helptxten">
-                <p><b>Log-in</b></p>
+                <p><b>Customer Search</b></p>
                 <p>
-                    When you search for the website you will find a log-in screen.
-                    You need to put the log-in data of your department in the
-                    input fields. If you don't have that, please contact your
-                    departement-manager.
+                    Here you can find a customer with the search bar provided. when you are searching,
+                    you will be searching on the information given above. (id, contact, company, ect.)
+                    when you have found your customer, the customer will have a red or green background.
+                    This means that he/she is above or below his/her credit.
+                    you can click on the customer to get more information.
                 </p>
             </div>
         </div>

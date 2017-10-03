@@ -7,7 +7,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/normalize.css">
         <link rel="stylesheet" href="../css/main.css">
-        <link rel="stylesheet" href="../css/login.css">
+        <link rel="stylesheet" href="{{asset('css/login.css')}}">
+        <link rel="stylesheet" href="{{asset('css/helpF.css')}}">
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 

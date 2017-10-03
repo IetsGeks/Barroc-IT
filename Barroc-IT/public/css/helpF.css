@@ -1,0 +1,49 @@
+button{
+    visibility: hidden;
+}
+
+.helpf{
+    visibility: visible;
+    width: 25px;
+    height: 25px;
+    background: #CFC1B5;
+    border-radius: 12.5px;
+    margin-top: 0px;
+    padding: 0;
+    border: none;
+    padding-top: -2px;
+    color: #275d8b;
+}
+
+.helpf:hover{
+    transition: .5s;
+    background: #275d8b;
+    color: #CFC1B5;
+}
+
+.jumbotron button p{
+    font-size: 19px;
+}
+
+#hidden{
+    visibility: hidden;
+    height: 0;
+}
+
+.helptxt{
+    background: #36D664;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.jumbotron .helptxt p{
+    font-size: 12px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.helptxten{
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: solid 2px black;
+}
