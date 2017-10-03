@@ -38,4 +38,7 @@ Route::get('/search-outcome', function (){
 Route::get('/template-home', function (){
     return view('template-home');
 });
+Route::get('/admin', function (){
+    return view('admin');
+});
 
