@@ -39,6 +39,7 @@ Route::get('/template-home', function (){
     return view('template-home');
 });
 Route::get('/admin', function (){
+   // \Illuminate\Support\Facades\DB::select('SELECT * FROM tbl_klanten WHERE active_a/i = i ');
     return view('admin');
 });
 
