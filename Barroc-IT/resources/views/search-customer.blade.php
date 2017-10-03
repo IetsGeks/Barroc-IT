@@ -48,12 +48,13 @@
             </thead>
             <tbody>
             <tr class="table-success">
-                <th scope="row">1</th>
-                <td>Contact</td>
-                <td>Company</td>
-                <td>Tel</td>
-                <td>Email</td>
-                <td>Address</td>
+                    <th scope="row">1</th>
+                    <td>james dow</td>
+                    <td>pc4u</td>
+                    <td>0621989009</td>
+                    <td>bmanv2@gmail.com</td>
+                    <td>5103kk</td>
+                <td><a href="{{url('/customer-inf')}}">View</a></td>
             </tr>
             <tr class="table-success">
                 <th scope="row">2</th>
