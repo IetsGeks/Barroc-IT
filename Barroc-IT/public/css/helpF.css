@@ -27,7 +27,7 @@ button{
 
 #hidden{
     visibility: hidden;
-    height: 0;
+    height: 0px;
 }
 
 .helptxt{
