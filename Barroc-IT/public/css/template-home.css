@@ -1,4 +1,11 @@
 /*===default===*/
+body{
+    background-image: url("../img/jumbotron.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 .row-spaced{
     display: flex;
     justify-content: space-around;
@@ -32,13 +39,16 @@
 /*===banner===*/
 
 .banner {
+    background-size: cover;
     display: flex;
     justify-content: center;
-    height: 418px;
-
 }
 .banner h3 {
     margin-top: 25%;
+}
+
+.banner span{
+    color: #000;
 }
 
 /*=========*/
