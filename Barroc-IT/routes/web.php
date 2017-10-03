@@ -32,10 +32,14 @@ Route::post('/add-customer', function (\Illuminate\Http\Request $request) {
 Route::get('/search-customer', function (){
     return view('search-customer');
 });
-Route::get('/search-outcome', function (){
-    return view('search-outcome');
+Route::get('/customer-inf', function (){
+    return view('customer-inf');
 });
 Route::get('/template-home', function (){
     return view('template-home');
+});
+Route::get('/admin', function (){
+   // \Illuminate\Support\Facades\DB::select('SELECT * FROM tbl_klanten WHERE active_a/i = i ');
+    return view('admin');
 });
 

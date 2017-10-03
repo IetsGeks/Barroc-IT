@@ -1,0 +1,23 @@
+.header-sales{
+    background-color: #808080;
+    height: 100px;
+}
+.row-projects-nav{
+    display: flex;
+    justify-content: space-around;
+}
+.row{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0;
+}
+.row li a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.department1 h3{
+    color: whitesmoke;
+    margin-top: 7%;
+}
