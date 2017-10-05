@@ -17,6 +17,7 @@ class customerController extends Controller
 
         //index needs: debit, limit, id, name, company, tel, email and zip (zip as in zipcode)
         //when sending information make sure the keys are as the names above. else you have to change it here or in index.
+        //make sure the project info (company, debit, limit) are only from the active project the customer can only have 1 active
 
         return view('customerS/index');
             //->with('customers', $customers);
