@@ -20,26 +20,16 @@ Route::get('/sales', function () {
 Route::get('/projects', function () {
     return view('projects');
 });
-Route::get('/customers', function (){
-    return view('customers');
-});
-Route::get('/add-customer', function (){
-    return view('add-customer');
-});
-Route::post('/add-customer', function (\Illuminate\Http\Request $request) {
-    dd($request->all());
-});
-Route::get('/search-customer', function (){
-    return view('search-customer');
-});
-Route::get('/customer-inf', function (){
-    return view('customer-inf');
-});
 Route::get('/template-home', function (){
     return view('template-home');
+});
+Route::get('/customers', function (){
+    return view('customers');
 });
 Route::get('/admin', function (){
    // \Illuminate\Support\Facades\DB::select('SELECT * FROM tbl_klanten WHERE active_a/i = i ');
     return view('admin');
 });
+
+Route::resource('customerS', 'customerController');
 
