@@ -14,6 +14,20 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 </head>
+
+@if(isset($customers) && isset($_GET['searchC']))
+    {{ $searchC = $_GET['searchC'] }}
+    @foreach($customers as $customer)
+        @if(strpos($customer->name, $searchC) == true ||
+            strpos($customer->company, $searchC) == true ||
+            strpos($customer->tel, $searchC) == true ||
+            strpos($customer->email, $searchC) == true ||
+            strpos($customer->zip, $searchC) == true)
+            {{ $ids = array_push($customer->id) }}
+        @endif
+    @endforeach
+@endif
+
 <body>
     <header class="header-sales">
         <ul class="row ul-customers">
@@ -25,9 +39,8 @@
         </div>
     </header>
     <div class="wrapper">
-        <form action="{{url('/search-customer')}}" method="post" class="form">
-            {{csrf_field()}}
-            <input class="searchB form-control" type="text" id="searchC" name="searchC">
+        <form action="" method="get" class="form">
+            <input class="searchB form-control" type="text" id="searchC" name="searchC" placeholder="Search">
             <input class="searchS btn btn-primary" type="submit" value="Search">
             <button type="button" onclick="switchH()">
                 <div class="helpf">
@@ -46,37 +59,33 @@
                 <th>Address</th>
             </tr>
             </thead>
+            @if(isset($customers))
             <tbody>
-            <tr class="table-success">
-                    <th scope="row">1</th>
-                    <td>james dow</td>
-                    <td>pc4u</td>
-                    <td>0621989009</td>
-                    <td>bmanv2@gmail.com</td>
-                    <td>5103kk</td>
-                <td><a href="{{url('/customer-inf')}}">View</a></td>
-            </tr>
-            <tr class="table-success">
-                <th scope="row">2</th>
-                <td>Contact</td>
-                <td>Company</td>
-                <td>Tel</td>
-                <td>Email</td>
-                <td>Address</td>
-            </tr>
-            <tr class="table-danger">
-                <th scope="row">3</th>
-                <td>Contact</td>
-                <td>Company</td>
-                <td>Tel</td>
-                <td>Email</td>
-                <td>Address</td>
-            </tr>
+            @foreach($customers as $customer)
+                @if(isset($ids) && $contains = array_has($ids, $customer->id))
+                    @if($customer->debit > $customer->limit)
+                    <tr class="table-danger">
+                    @else
+                    <tr class="table-success">
+                    @endif
+                        <th scope="row">{{ $customer->id }}</th>
+                        <td>{{ $customer->name }}</td>
+                        <td>{{ $customer->company }}</td>
+                        <td>{{ $customer->tel }}</td>
+                        <td>{{ $customer->email }}</td>
+                        <td>{{ $customer->zip }}</td>
+                        <td><a href="{{url("/customerS/$customer->id")}}">View</a></td>
+                    </tr>
+                @endif
+            @endforeach
             </tbody>
         </table>
-        <div class="error" id="hiddenER">
-            <div><p>Oops!</p><p>Have you tryed to turn it off and on again?</p></div>
+        @else
+        </table>
+        <div class="error">
+            <div><p>Well!</p><p>i don't see anyone here.</p></div>
         </div>
+        @endif
         <div class="helptxt" id="hidden">
             <div class="helptxtnl">
                 <p><b>klant zoeken</b></p>

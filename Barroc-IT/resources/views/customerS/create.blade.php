@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('css/add-customer.css')}}">
-    <link rel="stylesheet" href="{{asset('css/sales.css')}}">
+    <link rel="stylesheet" href="{{asset('css/searchC.css')}}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
@@ -24,23 +24,19 @@
         </div>
     </div>
 </header>
-    <div>
+    <div class="wrapper">
         <form action="" method="post" class="form">
             {{csrf_field()}}
-            <label for="c_name">Company name</label>
-            <input type="text" id="c_name">
-            <label for="adress">Adress</label>
-            <input type="text" id="adress">
-            <label for="postcode">Postcode(zip code)</label>
-            <input type="text" id="postcode">
-            <label for="residence">Residence</label>
-            <input type="text" id="residence">
-            <label for="adress2">Adress2</label>
-            <input type="text" id="adress2">
-            <label for="postcode2">Postcode2(zip code)</label>
-            <input type="text" id="postcode2">
-            <label for="residence2">Residence2</label>
-            <input type="text" id="residence2">
+            <input type="text" id="c_name" name="c_name" placeholder="Company name">
+            <label for="adress">*</label>
+            <input type="text" id="adress" name="adress" placeholder="adress" required>
+            <label for="zipcode">*</label>
+            <input type="text" id="zipcode" name="zipcode" placeholder="zipcode" required>
+            <label for="residence">*</label>
+            <input type="text" id="residence" name="residence" placeholder="Residence" required>
+            <input type="text" id="adress2" name="adress2" placeholder="Adress 2">
+            <input type="text" id="zipcode2" name="zipcode2" placeholder="Zip code 2">
+            <input type="text" id="residence2" name="residence2" placeholder="Residence 2">
             <label for="contact-person">Contact Person</label>
             <input type="text" id="contact-person">
             <label for="intitials">initials</label>
