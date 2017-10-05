@@ -27,75 +27,46 @@
 </head>
 <body>
 <header class="header-sales">
-    <div class="row-projects-nav">
-        <ul class="row sales-ul">
-            <li><a href="{{url('/template-home')}}">Home</a></li>
-            <li><a href="{{url('/projects')}}">Projects</a></li>
-            <li><a href="{{url('/customers')}}">customers</a></li>
-        </ul>
-        <div class="department1">
-            <h3>Sales</h3>
+    <div class="container">
+    {{--<div class="row-projects-nav">--}}
+        <div class="row-between">
+            <ul class="nav-items">
+                <li><a href="{{url('/template-home')}}">Home</a></li>
+                <li><a href="{{url('/projects')}}">Projects</a></li>
+                <li><a href="{{url('/customers')}}">customers</a></li>
+            </ul>
+            <div class="department1">
+                <h3>Sales</h3>
 
-
-            @if (isset($_SESSION{'sales'}))
-                 {{'<h3>' . $username . '</h3>'}}
-            @elseif (isset($_SESSION['finance']))
-                 {{'<h3>' . $username . '</h3>'}}
-            @elseif (isset($_SESSION['development']))
-                 {{'<h3>' . $username . '</h3>'}}
-            @elseif (isset($_SESSION['administration']))
-                 {{'<h3>' . $username . '</h3>'}}
-            @endif
-
+            </div>
         </div>
     </div>
-
-
 </header>
     <div class="banner">
         <div class="container">
-            <h3>Sales department</h3>
-            <span>Welcome to the Sales department control panel. Here we manage all the projects send in by our costumers.</span>
-
-                @if (isset($_SESSION{'sales'}))
-                    {{'<h3>' . $salesHome1 . '</h3>'}}
-                    {{ '<span>' . $salesHome2 . '</span>'}}
-                @elseif (isset($_SESSION['finance']))
-
-                     {{'<h3>' . $financeHome1 . '</h3>'}}
-                     {{'<span>' . $financeHome2 . '</span>'}}
-                @elseif (isset($_SESSION['development']))
-
-                     {{'<h3>' . $developmentHome1 . '</h3>'}}
-                     {{ '<span>' . $developmentHome2 . '</span>'}}
-                @elseif (isset($_SESSION['administration']))
-
-                     {{ '<h3>' . $adminHome1 . '</h3>'}}
-                     {{ '<span>' . $adminHome2 . '</span>'}}
-                @endif
-
-
+            <div class="banner">
+                <h3>Sales department</h3>
+                <p>Welcome to the Sales department control panel. Here we manage all the projects send in by our costumers.</p>
+            </div>
         </div>
     </div>
     <div class="row-footer">
-        <div class="container">
-            <div class="row-spaced">
-                <div class="item">
-                    <h4>Tiny</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-                <div class="item">
-                    <h4>Lau</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-                <div class="item">
-                    <h4>Erik</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-                <div class="item">
-                    <h4>Jos</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
+        <div class="row-around">
+            <div class="item">
+                <h4>Tiny</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="item">
+                <h4>Lau</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="item">
+                <h4>Erik</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="item">
+                <h4>Jos</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             </div>
         </div>
     </div>
