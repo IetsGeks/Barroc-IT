@@ -22,7 +22,24 @@
     <div class="container">
         <div class="customers">
             <h3>set clients active</h3>
+
+            <div class="row-set-admin">
+                <h5>bedrijfsnaam</h5>
+                <h5>naam</h5>
+                <h5>plaats</h5>
+            </div>
+
+
             <div class="row">
+
+                <ul class="list-group">
+                    <li class="list-group-item">kersemus</li>
+                    <li class="list-group-item">kersemus</li>
+                    <li class="list-group-item">kersemus</li>
+                    <li class="list-group-item">kersemus</li>
+                    <li class="list-group-item">kersemus</li>
+                </ul>
+
                 <ul class="list-group">
                     <li class="list-group-item">tiny en lau</li>
                     <li class="list-group-item">tiny en lau</li>
@@ -37,6 +54,14 @@
                     {{--<button class="btn-primary">set</button>--}}
                     {{--<button class="btn-primary">set</button>--}}
                 {{--</div>--}}
+                <ul class="list-group">
+                    <li class="list-group-item">breda</li>
+                    <li class="list-group-item">breda</li>
+                    <li class="list-group-item">breda</li>
+                    <li class="list-group-item">breda</li>
+                    <li class="list-group-item">breda</li>
+                </ul>
+
                 <div class="btn-list">
                     <form action="" class="buttons">
                         <input type="submit" value="set">
