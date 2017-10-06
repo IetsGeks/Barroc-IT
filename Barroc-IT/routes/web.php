@@ -31,5 +31,5 @@ Route::get('/admin', function (){
     return view('admin');
 });
 
-Route::resource('customerS', 'customerController');
+Route::resource('customerSearch', 'customerController');
 
