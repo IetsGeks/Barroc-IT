@@ -30,7 +30,7 @@
             </div>
 
 
-            <div class="row">
+            <div class="row-lists">
 
                 <ul class="list-group">
                     <li class="list-group-item">kersemus</li>
@@ -62,15 +62,7 @@
                     <li class="list-group-item">breda</li>
                 </ul>
 
-                <div class="btn-list">
-                    <form action="" class="buttons">
-                        <input type="submit" value="set">
-                        <input type="submit" value="set">
-                        <input type="submit" value="set">
-                        <input type="submit" value="set">
-                        <input type="submit" value="set">
-                    </form>
-                </div>
+
             </div>
         </div>
 

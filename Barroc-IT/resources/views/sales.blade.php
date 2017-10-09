@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{asset('css/header.css')}}">
     <link rel="stylesheet" href="{{asset('css/sales.css')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
     <!-- Styles -->
 
 
@@ -29,14 +31,17 @@
         </div>
     </div>
 </header>
-<div class="department">
-    <h3>sales department</h3>
+<div class="container">
+    <div class="department">
+        <h3>sales department</h3>
+    </div>
+
+    <div class="content">
+        <h4>you are now in the sales department section</h4>
+        <p>choose between projects, to add a new project or view a project status</p>
+        <p>or choose for customers to search customers, add a new customer or set an customer inactive</p>
+    </div>
 </div>
 
-<div class="content">
-    <h4>you are now in the sales department section</h4>
-    <p>choose between projects, to add a new project or view a project status</p>
-    <p>or choose for customers to search customers, add a new customer or set an customer inactive</p>
-</div>
 </body>
 </html>
