@@ -1,6 +1,6 @@
-.form{
+form{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -15,4 +15,18 @@
 }
 .ul-customers{
     padding-top: 9%;
+}
+.left, .right{
+    display: flex;
+    flex-direction: column;
+    width: 292px;
+}
+.left .form-group:Last-Of-Type, .right .form-group:Last-Of-Type{
+    margin: 0;
+}
+input{
+    width: 292px;
+}
+.wrapper{
+    padding-bottom: 16px;
 }

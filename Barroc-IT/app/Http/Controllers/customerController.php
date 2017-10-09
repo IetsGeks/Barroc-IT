@@ -42,7 +42,16 @@ class customerController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-
+            "c_name" => 'string|nullable',
+            "adress" => 'string|required',
+            "zipcode" => 'string|required',
+            "residence" => 'string|required',
+            "adress2" => 'string|nullable',
+            "zipcode2" => 'string|nullable',
+            "residence2" => 'string|nullabe',
+            "contact" => 'string|required',
+            "initials" => 'string|nullable|min:2',
+            "tel" => 'numeric|required|min:10'
         ]);
 
         //$customer = new \App\Customer();
