@@ -16,16 +16,15 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 </head>
-
-@if(isset($customers) && isset($_GET['searchC']))
-    {{ $searchC = $_GET['searchC'] }}
+@if(isset($customers) && isset($_GET['searchC']) && $_GET['searchC'] != null)
+    <?php $ids = array() ?>
     @foreach($customers as $customer)
-        @if(strpos($customer->name, $searchC) == true ||
-            strpos($customer->company, $searchC) == true ||
-            strpos($customer->tel, $searchC) == true ||
-            strpos($customer->email, $searchC) == true ||
-            strpos($customer->zip, $searchC) == true)
-            {{ $ids = array_push($customer->id) }}
+        @if(strpos($customer->contact_person, $_GET['searchC']) == 0 ||
+            strpos($customer->company_name, $_GET['searchC']) == 0 ||
+            strpos($customer->telephone_number, $_GET['searchC']) == 0 ||
+            strpos($customer->email, $_GET['searchC']) == 0 ||
+            strpos($customer->postal_code1, $_GET['searchC']) == 0)
+            <?php array_push($ids, $customer->ID) ?>
         @endif
     @endforeach
 @endif
@@ -64,22 +63,23 @@
             @if(isset($customers))
             <tbody>
             @foreach($customers as $customer)
-                @if(isset($ids) && $contains = array_has($ids, $customer->id))
+                @if(isset($ids) && array_has($ids, $customer->ID) == 0)
                     @if($customer->debit > $customer->limit)
                     <tr class="table-danger">
                     @else
                     <tr class="table-success">
                     @endif
-                        <th scope="row">{{ $customer->id }}</th>
-                        <td>{{ $customer->name }}</td>
-                        <td>{{ $customer->company }}</td>
-                        <td>{{ $customer->tel }}</td>
+                        <th scope="row">{{ $customer->ID }}</th>
+                        <td>{{ $customer->contact_person }}</td>
+                        <td>{{ $customer->company_name }}</td>
+                        <td>{{ $customer->telephone_number }}</td>
                         <td>{{ $customer->email }}</td>
-                        <td>{{ $customer->zip }}</td>
-                        <td><a href="{{url("/customerSearch/$customer->id")}}">View</a></td>
+                        <td>{{ $customer->postal_code1 }}</td>
+                        <td><a href="{{url("/customerSearch/$customer->ID")}}">View</a></td>
                     </tr>
                 @endif
             @endforeach
+                <?php unset($ids) ?>
             </tbody>
         </table>
         @else
