@@ -76,4 +76,19 @@ footer{
     border: 2px solid #808080;
     padding: 5px;
     margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+body{
+    background-image: url('../img/simple-background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height:100%;
+}
+.container{
+    background: #FFFFFF;
+    border-left: solid 4px #808080;
+    border-right: solid 4px #808080;
+    border-bottom: solid 4px #808080;
 }
