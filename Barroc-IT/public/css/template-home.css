@@ -21,7 +21,7 @@ body{
 
 /*===HEADER===*/
 .header-sales{
-    background-color: #808080;
+    background-color: rgba(118, 118, 118, 0.7);;
     height: 100px;
     display: flex;
 
@@ -60,6 +60,7 @@ body{
     margin-top: 14%;
     text-align: center;
     position: fixed;
+    font-family: "Arial";
 }
 
 .banner p{
@@ -73,15 +74,27 @@ body{
 /*===footer===*/
 
 .row-footer{
+    padding-top: 10px;
     display: flex;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.79);
     position: absolute;
     bottom: 0;
-
+    height: 9%;
 }
 .item{
-    width: 18%;
+    width: 15%;
+
+}
+.row-footer h4{
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #fff;
+
 }
 .row-footer p{
     color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+
+
 }
