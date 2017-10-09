@@ -27,6 +27,7 @@ Route::get('/customers', function (){
     return view('customers');
 });
 
-Route::resource('customerS', 'customerController');
 Route::resource('admin', 'Admincontroller');
+Route::resource('customerS', 'customerController');
+Route::resource('customerSearch', 'customerController');
 

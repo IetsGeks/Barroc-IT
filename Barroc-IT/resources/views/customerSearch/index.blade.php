@@ -74,7 +74,7 @@
                         <td>{{ $customer->tel }}</td>
                         <td>{{ $customer->email }}</td>
                         <td>{{ $customer->zip }}</td>
-                        <td><a href="{{url("/customerS/$customer->id")}}">View</a></td>
+                        <td><a href="{{url("/customerSearch/$customer->id")}}">View</a></td>
                     </tr>
                 @endif
             @endforeach

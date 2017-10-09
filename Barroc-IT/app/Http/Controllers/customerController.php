@@ -19,7 +19,7 @@ class customerController extends Controller
         //when sending information make sure the keys are as the names above. else you have to change it here or in index.
         //make sure the project info (company, debit, limit) are only from the active project the customer can only have 1 active
 
-        return view('customerS/index');
+        return view('customerSearch/index');
             //->with('customers', $customers);
     }
 
@@ -30,7 +30,7 @@ class customerController extends Controller
      */
     public function create()
     {
-        return view('customerS/create');
+        return view('customerSearch/create');
     }
 
     /**
@@ -49,7 +49,7 @@ class customerController extends Controller
         //$customer->item = $request->input_name;
 
         //$customer->save();
-        return view('customerS/create')
+        return view('customerSearch/create')
             ->with('massage', "saved");
     }
 
@@ -61,7 +61,7 @@ class customerController extends Controller
      */
     public function show($id)
     {
-        return view('customerS/customer')
+        return view('customerSearch/customer')
             ->with('id', $id);
     }
 
