@@ -12,8 +12,9 @@ class adminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   //$users = \App\Customer::all();
         return view('admin');
+           // ->with('users', $users);
     }
 
     /**
