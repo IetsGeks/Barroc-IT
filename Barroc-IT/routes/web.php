@@ -11,6 +11,8 @@
 |
 */
 
+
+
 Route::get('/', function () {
     return view('Login');
 });
@@ -20,8 +22,14 @@ Route::get('/sales', function () {
 Route::get('/projects', function () {
     return view('projects');
 });
-Route::get('/template-home', function (){
-    return view('template-home');
+Route::get('/master-home', function (){
+    return view('master-home');
+});
+Route::get('/sales-home', function (){
+    return view('sales-home');
+});
+Route::get('/finance-home', function (){
+    return view('finance-home');
 });
 Route::get('/customers', function (){
     return view('customers');

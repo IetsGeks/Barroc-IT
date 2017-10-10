@@ -56,15 +56,15 @@ body{
     display: flex;
     justify-content: center;
 }
-.banner h3 {
-    margin-top: 14%;
+.banner-content h3 {
+    margin-top: 25%;
     text-align: center;
-    position: fixed;
+
     font-family: "Arial";
 }
 
-.banner p{
-    margin-top: 27%;
+.banner-content p{
+    margin-top: 0%;
     color: #000;
     text-align: center;
 }
