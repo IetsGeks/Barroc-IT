@@ -13,8 +13,9 @@ class financeController extends Controller
      */
     public function index()
     {
+        $customers = \App\Customer::all();
         $users = \App\Finance::all();
-        return view('finance/index')->with('users', $users);
+        return view('finance/index')->with('users', $users)->with('customers', $customers);
     }
 
     /**
@@ -46,7 +47,11 @@ class financeController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = \App\Finance::find($id);
+        $customer = \App\Customers::find($id);
+        $projects = \App\Projects::find($id);
+
+        return view('finance/show')->with('user', $user)->with('customer', $customer)->with('project', $projects);
     }
 
     /**

@@ -24,32 +24,36 @@
 
 <div class="container">
 
-    <h3>finance department</h3>
+    <h3>customers</h3>
     <ul class="list-group row">
-        <li>id</li>
-        <li>balance</li>
-        <li>limit</li>
+        <li>Company Name</li>
+        <li>view</li>
+
     </ul>
     @foreach($users as $user)
-        <div>
-            @if($user->balance > $user->limit)
-                <div class="outcome-danger outcome">
-                    <p class="danger">{{$user->id}}</p>
-                    <p class="danger">{{$user->balance}}</p>
-                    <p class="danger">{{$user->limit}}</p>
+        @foreach($customers as $customer)
+                <div>
+                    @if($user->balance > $user->limit)
+                        <div class="outcome-danger outcome">
+                            @if($customer->ID == $user->number)
+                                <p class="danger">{{$customer->	company_name}}</p>
+                                <a href="{{action('financeController@show', $user->number)}}">view</a>
+                            @endif
+                        </div>
+
+                    @else
+
+                        <div class="outcome-succes outcome">
+                            @if($customer->ID == $user->number)
+                                <p class="succes">{{$customer->company_name}}</p>
+                                <a href="{{action('financeController@show', $user->number)}}">view</a>
+
+                            @endif
+                        </div>
+
+                    @endif
                 </div>
-
-            @else
-
-                <div class="outcome-succes outcome">
-                    <p class="succes">{{$user->id}}</p>
-                    <p class="succes">{{$user->balance}}</p>
-                    <p class="succes">{{$user->limit}}</p>
-                </div>
-
-            @endif
-        </div>
-
+        @endforeach
     @endforeach
 </div>
 </body>
