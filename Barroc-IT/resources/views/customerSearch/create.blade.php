@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="{{asset('css/searchC.css')}}">
     <link rel="stylesheet" href="{{asset('css/add-customer.css')}}">
-    <link rel="stylesheet" href="{{asset('css/header.css')}}">
+    {{--<link rel="stylesheet" href="{{asset('css/header.css')}}">--}}
 </head>
 <body>
 <header class="header-sales">
@@ -84,7 +84,10 @@
                     <input type="text" id="email" name="email" aria-describedby="emailHelp" placeholder="E-mail" required>
                     <small id="emailHelp" class="form-text text-muted">Enter the email of the customer. (required)</small>
                 </div>
-                <input type="submit" value="Add customer" class="btn-primary">
+                <div class="form-group">
+                    <input type="submit" value="Add customer" class="btn-primary">
+                </div>
+
             </div>
             {{csrf_field()}}
 

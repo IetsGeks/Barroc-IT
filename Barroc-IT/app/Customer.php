@@ -8,4 +8,5 @@ class Customer extends Model
 {
     //    override default tables
     protected $table = "tbl_customers";
+    protected $primaryKey = 'customer_id';
 }
