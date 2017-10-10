@@ -71,8 +71,13 @@ class customerController extends Controller
      */
     public function show($id)
     {
+        $customer = \App\Customer::find($id);
+        $customer_id = $customer->customer_id;
+        $projects = \App\Project::find($customer_id);
+
         return view('customerSearch/customer')
-            ->with('id', $id);
+            ->with('customer', $customer)
+            ->with('projects', $projects);
     }
 
     /**

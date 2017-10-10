@@ -21,9 +21,7 @@
         <li><a href="{{url('/projects')}}">Projects</a></li>
         <li><a href="{{url('/customers')}}">Customers</a></li>
     </ul>
-    <div class="department1">
-        <h3>sales department</h3>
-    </div>
+
 </header>
 <div class="wrapper">
     <div class="sub">
@@ -35,84 +33,90 @@
         <a href="#">Set Inactive</a>
     </div>
 
-    <table class="table table-hover table-sm">
+    <table class="table table-hover table-sm table-striped">
         <thead>
         <h2>Customer</h2>
-        <tr>
-            <th>#</th>
-            <th>Company</th>
-            <th>Adress</th>
-            <th>Zipcode</th>
-            <th>Location</th>
-            <th>Contact</th>
-            <th>initiuals</th>
-            <th>Tel</th>
-            <th>Fax</th>
-            <th>Email</th>
-        </tr>
         </thead>
         <tbody>
-        <tr id="hidden">
-            <th scope="row"></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
+        <tr>
+            <th>Company</th>
+            <th class="nobold">{{ $customer->company_name }}</th>
         </tr>
-
-        <tr id="show">
-            <th scope="row">-</th>
-            <th>-</th>
-            <th>-</th>
-            <th>-</th>
-            <th>-</th>
-            <th>-</th>
-            <th>-</th>
-            <th>-</th>
-            <th>-</th>
-            <th>-</th>
+        <tr>
+            <th>Adress</th>
+            <th class="nobold">{{ $customer->adress1 }}</th>
+        </tr>
+        <tr>
+            <th>Adress 2</th>
+            <th class="nobold">{{ $customer->adress2 }}</th>
+        </tr>
+        <tr>
+            <th>Zipcode</th>
+            <th class="nobold">{{ $customer->postal_code1 }}</th>
+        </tr>
+        <tr>
+            <th>Zipcode 2</th>
+            <th class="nobold">{{ $customer->postal_code2 }}</th>
+        </tr>
+        <tr>
+            <th>Location</th>
+            <th class="nobold">{{ $customer->place_of_residence1 }}</th>
+        </tr>
+        <tr>
+            <th>Location 2</th>
+            <th class="nobold">{{ $customer->place_of_residence2 }}</th>
+        </tr>
+        <tr>
+            <th>Contact</th>
+            <th class="nobold">{{ $customer->contact_person }}</th>
+        </tr>
+        <tr>
+            <th>initials</th>
+            <th class="nobold">{{ $customer->initials }}</th>
+        </tr>
+        <tr>
+            <th>Tel</th>
+            <th class="nobold">{{ $customer->telephone_number }}</th>
+        </tr>
+        <tr>
+            <th>Fax</th>
+            <th class="nobold">{{ $customer->fax_number }}</th>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <th class="nobold">{{ $customer->email }}</th>
         </tr>
         </tbody>
         </table>
 
         <table class="table table-hover table-sm">
         <thead>
-        <h2>projects</h2>
+        <h2>Projects</h2>
         <tr>
-            <th>#</th>
-            <th>Name</th>
             <th>Active</th>
-            <th>Payed</th>
             <th>Applications</th>
             <th>Hardware</th>
             <th>OS</th>
         </tr>
         </thead>
         <tbody>
-        <tr id="hidden">
-            <th scope="row"></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
+        @if(isset($projects))
+        @foreach($projects as $project)
+        <tr>
+            <th>{{ $project->active }}</th>
+            <th>{{ $project->applications }}</th>
+            <th>{{ $project->Hardware }}</th>
+            <th>{{ $project->OS }}</th>
         </tr>
-
-        <tr id="show">
-            <th scope="row">-</th>
-            <th>-</th>
-            <th>-</th>
+        @endforeach
+        @else
+        <tr>
             <th>-</th>
             <th>-</th>
             <th>-</th>
             <th>-</th>
         </tr>
+        @endif
         </tbody>
     </table>
     <div class="helptxt" id="hidden">
