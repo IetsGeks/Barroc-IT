@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class customerController extends Controller
 {
@@ -13,14 +14,14 @@ class customerController extends Controller
      */
     public function index()
     {
-        //$customers = \App\Customer::all();
+        $customers = \App\Customer::all();
 
         //index needs: debit, limit, id, name, company, tel, email and zip (zip as in zipcode)
         //when sending information make sure the keys are as the names above. else you have to change it here or in index.
         //make sure the project info (company, debit, limit) are only from the active project the customer can only have 1 active
 
-        return view('customerSearch/index');
-            //->with('customers', $customers);
+        return view('customerSearch/index')
+            ->with('customers', $customers);
     }
 
     /**
@@ -70,8 +71,13 @@ class customerController extends Controller
      */
     public function show($id)
     {
+        $customer = \App\Customer::find($id);
+        $customer_id = $customer->customer_id;
+        $projects = \App\Project::find($customer_id);
+
         return view('customerSearch/customer')
-            ->with('id', $id);
+            ->with('customer', $customer)
+            ->with('projects', $projects);
     }
 
     /**

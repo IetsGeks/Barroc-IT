@@ -38,4 +38,5 @@ Route::get('/customers', function (){
 Route::resource('admin', 'Admincontroller');
 Route::resource('customerS', 'customerController');
 Route::resource('customerSearch', 'customerController');
+Route::resource('finance', 'financeController');
 

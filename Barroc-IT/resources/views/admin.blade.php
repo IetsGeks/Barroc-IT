@@ -21,14 +21,14 @@
 
     <div class="container">
         <div class="customers">
-            <h3>set clients active</h3>
+            <h3>clients</h3>
 
             <div class="row-set-admin">
                 <h5>bedrijfsnaam</h5>
                 <h5>naam</h5>
                 <h5>plaats</h5>
             </div>
-
+            {{-- --}}
 
             <div class="row-lists">
 

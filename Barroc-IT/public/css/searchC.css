@@ -10,6 +10,10 @@ body{
     height:100%;
 }
 
+.nobold{
+    font-weight: normal;
+}
+
 body{
     margin: 0;
 }

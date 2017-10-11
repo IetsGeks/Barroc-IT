@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class adminController extends Controller
+class financeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -12,9 +12,10 @@ class adminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   //$users = \App\Customer::all();
-        return view('admin');
-           // ->with('users', $users);
+    {
+        $customers = \App\Customer::all();
+        $users = \App\Finance::all();
+        return view('finance/index')->with('users', $users)->with('customers', $customers);
     }
 
     /**
@@ -46,7 +47,11 @@ class adminController extends Controller
      */
     public function show($id)
     {
-        return view('admin.show')->with('id', $id);
+        $user = \App\Finance::find($id);
+        $customer = \App\Customers::find($id);
+        $projects = \App\Projects::find($id);
+
+        return view('finance/show')->with('user', $user)->with('customer', $customer)->with('project', $projects);
     }
 
     /**

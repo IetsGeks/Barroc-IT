@@ -4,9 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Customer extends Model
+class Finance extends Model
 {
-    //    override default tables
-    protected $table = "tbl_customers";
+    protected $table = 'tbl_finances';
     protected $primaryKey = 'customer_id';
 }
