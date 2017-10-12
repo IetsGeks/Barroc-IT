@@ -46,6 +46,6 @@ Route::get('/customers', function (){
 });
 
 Route::resource('admin', 'Admincontroller');
-Route::resource('customerSearch', 'customerController');
+Route::resource('sales', 'customerController');
 Route::resource('finance', 'financeController');
 

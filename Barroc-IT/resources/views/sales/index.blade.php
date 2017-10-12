@@ -69,7 +69,7 @@
                         <td>{{ $customer->telephone_number }}</td>
                         <td>{{ $customer->email }}</td>
                         <td>{{ $customer->postal_code1 }}</td>
-                        <td><a href="{{url("/customerSearch/$customer->customer_id")}}">View</a></td>
+                        <td><a href="{{url("/sales/$customer->customer_id")}}">View</a></td>
                     </tr>
                     @endif
                 @endforeach
