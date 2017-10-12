@@ -41,6 +41,7 @@ Route::get('/assignments', function (){
     return view('assignments');
 });
 
+
 Route::get('/customers', function (){
     return view('customers');
 });
