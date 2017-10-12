@@ -31,6 +31,16 @@ Route::get('/sales-home', function (){
 Route::get('/finance-home', function (){
     return view('finance-home');
 });
+Route::get('/development-home', function (){
+    return view('development-home');
+});
+Route::get('/admin-home', function (){
+    return view('admin-home');
+});
+Route::get('/assignments', function (){
+    return view('assignments');
+});
+
 Route::get('/customers', function (){
     return view('customers');
 });

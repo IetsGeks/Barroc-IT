@@ -41,7 +41,9 @@
         </div>
     </div>
     <div class="row-footer">
-        @yield('footer-content')
+        <div class="footer-wrapper">
+            @yield('footer-content')
+        </div>
     </div>
 </body>
 </html>
