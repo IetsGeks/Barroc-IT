@@ -43,8 +43,8 @@
         {{--<input type="text" name="company_name" id="company_name">--}}
         {{--<br>--}}
         {{--</form>--}}
-        <a href="{{url('/customerSearch/create')}}">Add new customer</a>
-        <a href="{{url('/customerSearch')}}">Search for a customer</a>
+        <a href="{{url('/sales/create')}}">Add new customer</a>
+        <a href="{{url('/sales')}}">Search for a customer</a>
 
     </div>
 </div>

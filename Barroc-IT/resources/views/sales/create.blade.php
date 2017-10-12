@@ -28,7 +28,7 @@
     </div>
 </header>
     <div class="wrapper">
-        <form action="" method="post">
+        <form action="/sales" method="post">
             <div class="left">
                 <div class="form-group">
                     <input type="text" id="c_name" name="c_name" aria-describedby="cnameHelp" placeholder="Company name">

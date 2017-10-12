@@ -24,19 +24,15 @@
 
 </header>
 <div class="wrapper">
-    <div class="sub">
+    <div class="row-inline">
+        <h2>Customer</h2>
         <button type="button" onclick="switchH()">
             <div class="helpf">
                 <p>?</p>
             </div>
         </button>
-        <a href="#">Set Inactive</a>
     </div>
-
     <table class="table table-hover table-sm table-striped">
-        <thead>
-        <h2>Customer</h2>
-        </thead>
         <tbody>
         <tr>
             <th>Company</th>
@@ -93,7 +89,7 @@
         <thead>
         <h2>Projects</h2>
         <tr>
-            <th>Active</th>
+            <th>Activety</th>
             <th>Applications</th>
             <th>Hardware</th>
             <th>OS</th>
@@ -103,10 +99,14 @@
         @if(isset($projects))
         @foreach($projects as $project)
         <tr>
-            <th>{{ $project->active }}</th>
-            <th>{{ $project->applications }}</th>
-            <th>{{ $project->Hardware }}</th>
-            <th>{{ $project->OS }}</th>
+            @if($project->active == 1)
+                <th class="nobold">Active</th>
+            @else
+                <th class="nobold">In Active</th>
+            @endif
+            <th class="nobold">{{ $project->applications }}</th>
+            <th class="nobold">{{ $project->hardware }}</th>
+            <th class="nobold">{{ $project->operating_system }}</th>
         </tr>
         @endforeach
         @else
@@ -121,23 +121,17 @@
     </table>
     <div class="helptxt" id="hidden">
         <div class="helptxtnl">
-            <p><b>klant zoeken</b></p>
+            <p><b>Klant Informatie</b></p>
             <p>
-                hier kan je met de zoek balk een klant op zoeken die je nodig hebt.
-                als je zoekt zoek je op de punten die bovenaan gegeven staan. (id, contact, bedrijf, ect.)
-                als je je klant hebt gevonden zal de klant een groen of roode agtergrong hebben.
-                dit betekend of hij boven of onder het krediet staat.
-                vervolgens kan je op de klant klicken om er meer informaatie over te krijgen.
+                hier zie je alle informatie over de geselecteerde klant. met daar bij ook alle projecten die de
+                klant heeft aangevraagt bij Barroc-IT.
             </p>
         </div>
         <div class="helptxten">
-            <p><b>Customer Search</b></p>
+            <p><b>Customer Information</b></p>
             <p>
-                Here you can find a customer with the search bar provided. when you are searching,
-                you will be searching on the information given above. (id, contact, company, ect.)
-                when you have found your customer, the customer will have a red or green background.
-                This means that he/she is above or below his/her credit.
-                you can click on the customer to get more information.
+                here you see all the informatie about the selected customer. with this you also see all the projects
+                the customer has requested form Barroc-IT.
             </p>
         </div>
     </div>
@@ -158,6 +152,7 @@
 
     function HtS(){
         $('div#hidden').attr("id", "shown");
+        window.scrollTo(0,document.body.scrollHeight);
     }
 
 </script>

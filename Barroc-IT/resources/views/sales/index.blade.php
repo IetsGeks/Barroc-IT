@@ -24,9 +24,6 @@
             <li><a href="{{url('/projects')}}">Projects</a></li>
             <li><a href="{{url('/customers')}}">Customers</a></li>
         </ul>
-        <div class="department1">
-            <h3>sales department</h3>
-        </div>
     </header>
     <div class="wrapper">
         <form action="" method="get" class="form">
@@ -64,11 +61,15 @@
                         @endif
                         <th scope="row">{{ $customer->ID }}</th>
                         <td>{{ $customer->contact_person }}</td>
-                        <td>{{ $customer->company_name }}</td>
+                        @if($customer->company_name == null)
+                            <td>-</td>
+                        @else
+                            <td>{{ $customer->company_name }}</td>
+                        @endif
                         <td>{{ $customer->telephone_number }}</td>
                         <td>{{ $customer->email }}</td>
                         <td>{{ $customer->postal_code1 }}</td>
-                        <td><a href="{{url("/customerSearch/$customer->ID")}}">View</a></td>
+                        <td><a href="{{url("/sales/$customer->customer_id")}}">View</a></td>
                     </tr>
                     @endif
                 @endforeach
