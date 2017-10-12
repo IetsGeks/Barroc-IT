@@ -18,19 +18,19 @@
         <div class="row-around">
             <div class="item">
                 <h5>Jon Targaryan</h5>
-                <p>This is the departments manager of Sales</p>
+                <p>This is the departments manager of Sales.</p>
             </div>
             <div class="item">
                 <h5>Denaeris Stormborn</h5>
-                <p>This is the departments manager of Sales.</p>
+                <p>This is the departments manager of Finance.</p>
             </div>
             <div class="item">
                 <h5>Cersei Lannister</h5>
-                <p>This is the departments manager of Sales.</p>
+                <p>This is the departments manager of Admin.</p>
             </div>
             <div class="item">
                 <h5>Sansa Stark</h5>
-                <p>This is the departments manager of Sales</p>
+                <p>This is the departments manager of Development.</p>
             </div>
         </div>
     @endsection

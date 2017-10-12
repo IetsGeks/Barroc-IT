@@ -17,20 +17,20 @@
     @section('footer-content')
         <div class="row-around">
             <div class="item">
-                <h4>Tiny</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <h5>Jon Targaryan</h5>
+                <p>This is the departments manager of Sales.</p>
             </div>
             <div class="item">
-                <h4>Lau</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <h5>Denaeris Stormborn</h5>
+                <p>This is the departments manager of Finance.</p>
             </div>
             <div class="item">
-                <h4>Erik</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <h5>Cersei Lannister</h5>
+                <p>This is the departments manager of Admin.</p>
             </div>
             <div class="item">
-                <h4>Jos</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <h5>Sansa Stark</h5>
+                <p>This is the departments manager of Development.</p>
             </div>
         </div>
     @endsection
