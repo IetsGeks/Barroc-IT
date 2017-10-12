@@ -76,6 +76,10 @@ ol{
     height: 40px;
     margin-top: 2%;
 }
+.row-inline{
+    display: flex;
+    flex-direction: row;
+}
 footer{
     background-color: #808080;
     height: 60px;

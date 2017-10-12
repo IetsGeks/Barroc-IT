@@ -31,9 +31,10 @@ button{
 }
 
 .helptxt{
-    background: #36D664;
+    background: #ffffff;
     border-radius: 5px;
     padding: 10px;
+    border: solid 2px #000000;
 }
 
 .jumbotron .helptxt p{
@@ -45,5 +46,5 @@ button{
 .helptxten{
     margin-top: 10px;
     padding-top: 10px;
-    border-top: solid 2px black;
+    border-top: solid 2px #000000;
 }

@@ -49,16 +49,28 @@ class customerController extends Controller
             "residence" => 'string|required',
             "adress2" => 'string|nullable',
             "zipcode2" => 'string|nullable',
-            "residence2" => 'string|nullabe',
+            "residence2" => 'string|nullable',
             "contact" => 'string|required',
             "initials" => 'string|nullable|min:2',
-            "tel" => 'numeric|required|min:10'
+            "tel" => 'numeric|required|min:10',
+            "fax" => 'numeric|nullable|min:10',
+            "email" => 'email|required'
         ]);
 
-        //$customer = new \App\Customer();
-        //$customer->item = $request->input_name;
+        $customer = new \App\Customer();
+        $customer->company_name = $request->c_name;
+        $customer->adress1 = $request->adress;
+        $customer->postal_code1 = $request->zipcode;
+        $customer->place_of_residence1 = $request->residence;
+        $customer->adress2 = $request->adress2;
+        $customer->postal_code2 = $request->zipcode2;
+        $customer->place_of_residence2 = $request->residence2;
+        $customer->contact_person = $request->contact;
+        $customer->initials = $request->initials;
+        $customer->telephone_number = $request->tel;
+        $customer->email = $request->email;
+        $customer->save();
 
-        //$customer->save();
         return view('customerSearch/create')
             ->with('massage', "saved");
     }
@@ -72,12 +84,20 @@ class customerController extends Controller
     public function show($id)
     {
         $customer = \App\Customer::find($id);
+        $projects = \App\Project::all();
+
         $customer_id = $customer->customer_id;
-        $projects = \App\Project::find($customer_id);
+        $projectsF = array();
+
+        foreach ($projects as $project){
+            if ($project->customer_id == $customer_id){
+                array_push($projectsF, $project);
+            }
+        }
 
         return view('customerSearch/customer')
             ->with('customer', $customer)
-            ->with('projects', $projects);
+            ->with('projects', $projectsF);
     }
 
     /**
