@@ -15,6 +15,9 @@
         <div class="banner-content">
             <h3>Sales department</h3>
             <p>Welcome to the Sales department control panel. Here we manage all the projects send in by our costumers.</p>
+            <div class="sales-links">
+                <ul></ul>
+            </div>
         </div>
         @endsection
     @section('footer-content')
