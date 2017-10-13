@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class financeController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,9 +19,14 @@ class financeController extends Controller
      */
     public function index()
     {
-        $customers = \App\Customer::all();
-        $users = \App\Finance::all();
-        return view('finance/index')->with('users', $users)->with('customers', $customers);
+        if (\Auth::user()->type == 'finance' || \Auth::user()->type == 'superadmin')
+        {
+            $customers = \App\Customer::all();
+            $users = \App\Finance::all();
+            return view('finance/index')->with('users', $users)->with('customers', $customers);
+        }
+        return abort(403, 'Unauthorized.');
+
     }
 
     /**
@@ -25,7 +36,11 @@ class financeController extends Controller
      */
     public function create()
     {
-        //
+        if (\Auth::user()->type == 'finance' || \Auth::user()->type == 'superadmin')
+        {
+
+        }
+        return abort(403, 'Unauthorized.');
     }
 
     /**
@@ -36,7 +51,11 @@ class financeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (\Auth::user()->type == 'finance' || \Auth::user()->type == 'superadmin')
+        {
+
+        }
+        return abort(403, 'Unauthorized.');
     }
 
     /**
@@ -47,11 +66,16 @@ class financeController extends Controller
      */
     public function show($id)
     {
-        $user = \App\Finance::find($id);
-        $customer = \App\Customers::find($id);
-        $projects = \App\Projects::find($id);
+        if (\Auth::user()->type == 'finance' || \Auth::user()->type == 'superadmin')
+        {
+            $user = \App\Finance::find($id);
+            $customer = \App\Customers::find($id);
+            $projects = \App\Projects::find($id);
 
-        return view('finance/show')->with('user', $user)->with('customer', $customer)->with('project', $projects);
+            return view('finance/show')->with('user', $user)->with('customer', $customer)->with('project', $projects);
+        }
+        return abort(403, 'Unauthorized.');
+
     }
 
     /**
@@ -62,7 +86,11 @@ class financeController extends Controller
      */
     public function edit($id)
     {
-        //
+        if (\Auth::user()->type == 'finance' || \Auth::user()->type == 'superadmin')
+        {
+
+        }
+        return abort(403, 'Unauthorized.');
     }
 
     /**
@@ -74,7 +102,11 @@ class financeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if (\Auth::user()->type == 'finance' || \Auth::user()->type == 'superadmin')
+        {
+
+        }
+        return abort(403, 'Unauthorized.');
     }
 
     /**
@@ -85,6 +117,10 @@ class financeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if (\Auth::user()->type == 'finance' || \Auth::user()->type == 'superadmin')
+        {
+
+        }
+        return abort(403, 'Unauthorized.');
     }
 }

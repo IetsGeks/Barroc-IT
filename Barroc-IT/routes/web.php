@@ -12,18 +12,16 @@
 */
 
 
-
-Route::get('/', function () {
-    return view('Login');
+Route::get('/director', function () {
+    return view('director');
 });
+Route::get('/', 'adminController@index');
+
 Route::get('/sales', function () {
     return view('sales');
 });
 Route::get('/projects', function () {
     return view('projects');
-});
-Route::get('/master-home', function (){
-    return view('master-home');
 });
 Route::get('/sales-home', function (){
     return view('sales-home');
@@ -45,7 +43,9 @@ Route::get('/customers', function (){
     return view('customers');
 });
 
-Route::resource('admin', 'Admincontroller');
+Route::resource('admin', 'adminController');
 Route::resource('sales', 'customerController');
 Route::resource('finance', 'financeController');
+
+Auth::routes();
 

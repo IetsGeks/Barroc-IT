@@ -7,6 +7,12 @@ use Illuminate\Support\Facades\DB;
 
 class customerController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,14 +20,15 @@ class customerController extends Controller
      */
     public function index()
     {
-        $customers = \App\Customer::all();
+        if (\Auth::user()->type == 'sales' || \Auth::user()->type == 'superadmin')
+        {
+            $customers = \App\Customer::all();
 
-        //index needs: debit, limit, id, name, company, tel, email and zip (zip as in zipcode)
-        //when sending information make sure the keys are as the names above. else you have to change it here or in index.
-        //make sure the project info (company, debit, limit) are only from the active project the customer can only have 1 active
+            return view('sales/index')
+                ->with('customers', $customers);
+        }
+        return abort(403, 'Unauthorized.');
 
-        return view('sales/index')
-            ->with('customers', $customers);
     }
 
     /**
@@ -31,7 +38,11 @@ class customerController extends Controller
      */
     public function create()
     {
-        return view('sales/create');
+        if (\Auth::user()->type == 'sales' || \Auth::user()->type == 'superadmin')
+        {
+            return view('sales/create');
+        }
+        return abort(403, 'Unauthorized.');
     }
 
     /**
@@ -42,37 +53,41 @@ class customerController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            "c_name" => 'string|nullable',
-            "adress" => 'string|required',
-            "zipcode" => 'string|required',
-            "residence" => 'string|required',
-            "adress2" => 'string|nullable',
-            "zipcode2" => 'string|nullable',
-            "residence2" => 'string|nullable',
-            "contact" => 'string|required',
-            "initials" => 'string|nullable|min:2',
-            "tel" => 'numeric|required|min:10',
-            "fax" => 'numeric|nullable|min:10',
-            "email" => 'email|required'
-        ]);
+        if (\Auth::user()->type == 'sales' || \Auth::user()->type == 'superadmin')
+        {
+            $this->validate($request, [
+                "c_name" => 'string|nullable',
+                "adress" => 'string|required',
+                "zipcode" => 'string|required',
+                "residence" => 'string|required',
+                "adress2" => 'string|nullable',
+                "zipcode2" => 'string|nullable',
+                "residence2" => 'string|nullable',
+                "contact" => 'string|required',
+                "initials" => 'string|nullable|min:2',
+                "tel" => 'numeric|required|min:10',
+                "fax" => 'numeric|nullable|min:10',
+                "email" => 'email|required'
+            ]);
 
-        $customer = new \App\Customer();
-        $customer->company_name = $request->c_name;
-        $customer->adress1 = $request->adress;
-        $customer->postal_code1 = $request->zipcode;
-        $customer->place_of_residence1 = $request->residence;
-        $customer->adress2 = $request->adress2;
-        $customer->postal_code2 = $request->zipcode2;
-        $customer->place_of_residence2 = $request->residence2;
-        $customer->contact_person = $request->contact;
-        $customer->initials = $request->initials;
-        $customer->telephone_number = $request->tel;
-        $customer->email = $request->email;
-        $customer->save();
+            $customer = new \App\Customer();
+            $customer->company_name = $request->c_name;
+            $customer->adress1 = $request->adress;
+            $customer->postal_code1 = $request->zipcode;
+            $customer->place_of_residence1 = $request->residence;
+            $customer->adress2 = $request->adress2;
+            $customer->postal_code2 = $request->zipcode2;
+            $customer->place_of_residence2 = $request->residence2;
+            $customer->contact_person = $request->contact;
+            $customer->initials = $request->initials;
+            $customer->telephone_number = $request->tel;
+            $customer->email = $request->email;
+            $customer->save();
 
-        return view('sales/create')
-            ->with('massage', "saved");
+            return view('sales/create')
+                ->with('massage', "saved");
+        }
+        return abort(403, 'Unauthorized.');
     }
 
     /**
@@ -83,21 +98,25 @@ class customerController extends Controller
      */
     public function show($id)
     {
-        $customer = \App\Customer::find($id);
-        $projects = \App\Project::all();
+        if (\Auth::user()->type == 'sales' || \Auth::user()->type == 'superadmin')
+        {
+            $customer = \App\Customer::find($id);
+            $projects = \App\Project::all();
 
-        $customer_id = $customer->customer_id;
-        $projectsF = array();
+            $customer_id = $customer->customer_id;
+            $projectsF = array();
 
-        foreach ($projects as $project){
-            if ($project->customer_id == $customer_id){
-                array_push($projectsF, $project);
+            foreach ($projects as $project){
+                if ($project->customer_id == $customer_id){
+                    array_push($projectsF, $project);
+                }
             }
-        }
 
-        return view('sales/customer')
-            ->with('customer', $customer)
-            ->with('projects', $projectsF);
+            return view('sales/customer')
+                ->with('customer', $customer)
+                ->with('projects', $projectsF);
+        }
+        return abort(403, 'Unauthorized.');
     }
 
     /**
@@ -108,7 +127,11 @@ class customerController extends Controller
      */
     public function edit($id)
     {
-        //
+        if (\Auth::user()->type == 'sales' || \Auth::user()->type == 'superadmin')
+        {
+
+        }
+        return abort(403, 'Unauthorized.');
     }
 
     /**
@@ -120,7 +143,11 @@ class customerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if (\Auth::user()->type == 'sales' || \Auth::user()->type == 'superadmin')
+        {
+
+        }
+        return abort(403, 'Unauthorized.');
     }
 
     /**
@@ -131,6 +158,10 @@ class customerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if (\Auth::user()->type == 'sales' || \Auth::user()->type == 'superadmin')
+        {
+
+        }
+        return abort(403, 'Unauthorized.');
     }
 }
