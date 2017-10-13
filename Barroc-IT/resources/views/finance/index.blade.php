@@ -10,51 +10,74 @@
     <link rel="stylesheet" href="{{asset('css/header.css')}}">
     <link rel="stylesheet" href="{{asset('css/sales.css')}}">
     <link rel="stylesheet" href="{{asset('css/finance.css')}}">
+
 </head>
 <body>
 <header class="header-sales">
-    <ul class="row ul-customers">
-        <li><a href="{{url('/projects')}}">Projects</a></li>
-        <li><a href="{{url('/customers')}}">Customers</a></li>
-    </ul>
-    <div class="department">
-        <h3>finance department</h3>
+    <div class="row-projects-nav">
+        <ul class="row sales-ul">
+            <li><a href="{{url('/finance/invoices')}}">Invoices</a></li>
+        </ul>
+
+        <div class="department1">
+            <h3>finance department</h3>
+        </div>
     </div>
 </header>
 
 <div class="container">
 
-    <h3>customers</h3>
+    <h3>Active projects</h3>
+    <ul class="list-group-item-success">
+        @if(session('succes'))
+            <li class="list-group-item-success">{{session('succes')}}</li>
+        @endif
+    </ul>
     <ul class="list-group row">
         <li>Company Name</li>
+        <li>project_id</li>
         <li>view</li>
 
     </ul>
-    @foreach($users as $user)
+
+    @foreach($projects as $project)
         @foreach($customers as $customer)
-                <div>
-                    @if($user->balance > $user->limit)
-                        <div class="outcome-danger outcome">
-                            @if($customer->ID == $user->number)
-                                <p class="danger">{{$customer->	company_name}}</p>
-                                <a href="{{action('financeController@show', $user->number)}}">view</a>
-                            @endif
-                        </div>
+            @foreach($finances as $finance)
+                @if($finance->project_id == $project->project_id )
+                        @if($project->customer_id == $customer->customer_id && $customer->active == 1)
 
-                    @else
+                                    <div>
+                                        @if($finance->balance > $finance->limit)
+                                            <div class="outcome-danger outcome">
+                                                @if($project->active == 1)
+                                                    <p class="danger">{{$customer->	company_name}}</p>
+                                                    <p class="danger">{{$finance->project_id}}</p>
+                                                    <a href="{{action('financeController@show', $finance->project_id)}}">view</a>
+                                                @endif
+                                            </div>
 
-                        <div class="outcome-succes outcome">
-                            @if($customer->ID == $user->number)
-                                <p class="succes">{{$customer->company_name}}</p>
-                                <a href="{{action('financeController@show', $user->number)}}">view</a>
+                                        @else
 
-                            @endif
-                        </div>
+                                            <div class="outcome-succes outcome">
+                                                @if( $project->active == 1)
+                                                    <p class="succes">{{$customer->company_name}}</p>
+                                                    <p class="succes">{{$project->project_id}}</p>
+                                                    <a href="{{action('financeController@show', $finance->project_id)}}">view</a>
 
-                    @endif
-                </div>
+                                                @endif
+                                            </div>
+
+                                        @endif
+                                    </div>
+
+                        @endif
+
+                @endif
+            @endforeach
         @endforeach
-    @endforeach
+@endforeach
+
+
 </div>
 </body>
 </html>

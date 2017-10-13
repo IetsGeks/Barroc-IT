@@ -32,7 +32,7 @@
 .row{
     display: flex;
     justify-content: space-between;
-    margin-left: -5%;
+
 }
 .row li{
     width: 200px;

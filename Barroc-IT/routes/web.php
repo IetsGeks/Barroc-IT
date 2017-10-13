@@ -47,6 +47,10 @@ Route::get('/customers', function (){
 Route::resource('admin', 'adminController');
 Route::resource('sales', 'customerController');
 Route::resource('finance', 'financeController');
+Route::put('finance/{id}/complete', 'financeController@finish');
+Route::put('finance/{id}/client_inactive', 'financeController@inactivate_client');
+
+
 
 Auth::routes();
 

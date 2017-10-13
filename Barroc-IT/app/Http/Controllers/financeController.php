@@ -29,6 +29,24 @@ class financeController extends Controller
 
     }
 
+
+    public function finish($id)
+    {
+        $project = \App\Project::find($id);
+        $project->active = 0;
+        $project->save();
+
+        return redirect('finance')->with('succes', 'project is now inactive');
+    }
+
+    public function inactivate_client($id)
+    {
+        $customer = \App\Customer::find($id);
+        $customer->active = 0;
+        $customer->save();
+
+        return redirect('finance')->with('succes', 'client is now inactive');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -123,4 +141,5 @@ class financeController extends Controller
         }
         return abort(403, 'Unauthorized.');
     }
+
 }
