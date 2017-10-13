@@ -21,6 +21,18 @@ form{
     flex-direction: column;
     width: 292px;
 }
+.nav-items{
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-items a{
+    color: white;
+    margin-right: 10px;
+    font-weight: bold;
+    text-decoration: none;
+
+}
 .left .form-group:Last-Of-Type, .right .form-group:Last-Of-Type{
     margin: 0;
 }
