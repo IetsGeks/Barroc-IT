@@ -18,20 +18,32 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
     </head>
+    {{ dd($errors) }}
     <body>
         <div class="jumbotron jumbo-login">
             <div class="container">
                 <h1 class="text_1 text-center">BARROC IT. </h1>
-                <form action="" method="post" class="form-login col-md-4 col-md-offset-4">
+                @guest
+                <form method="POST" action="{{ route('login') }}" class="form-login col-md-4 col-md-offset-4">
                     {{ csrf_field() }}
                     <legend class="subhead">Please Log in</legend>
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" name="username" id="username" class="form-control">
+                    <div class="form-group {{ $errors->has('user') ? ' has-error' : '' }}">
+                        <label for="user">Username</label>
+                        <input type="text" name="user" id="user" class="form-control" value="{{ old('user') }}" required autofocus>
+                        @if ($errors->has('user'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('user') }}</strong>
+                            </span>
+                        @endif
                     </div>
-                    <div class="form-group">
+                    <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
                         <label for="password">Password</label>
-                        <input type="password" name="password" id="password" class="form-control">
+                        <input type="password" name="password" id="password" class="form-control" required>
+                        @if ($errors->has('password'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
+                        @endif
                     </div>
                     <div class="form-group">
                         <input type="submit" value="submit" class="btn btn-primary">
@@ -42,6 +54,18 @@
                         </button>
                     </div>
                 </form>
+                @else
+                    @endguest
+                    <a href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+
                 <div class="helptxt" id="hidden">
                     <div class="helptxtnl">
                         <p><b>Inloggen</b></p>

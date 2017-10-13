@@ -6,15 +6,27 @@ use Illuminate\Http\Request;
 
 class adminController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   //$users = \App\Customer::all();
-        return view('admin');
-           // ->with('users', $users);
+    {
+        if (\Auth::user()->type == 'admin' || \Auth::user()->type == 'superadmin')
+        {
+            //$users = \App\Customer::all();
+            return view('admin');
+            // ->with('users', $users);
+        }
+        return abort(403, 'Unauthorized.');
+
     }
 
     /**
@@ -24,7 +36,11 @@ class adminController extends Controller
      */
     public function create()
     {
-        //
+        if (\Auth::user()->type == 'admin' || \Auth::user()->type == 'superadmin')
+        {
+
+        }
+        return abort(403, 'Unauthorized.');
     }
 
     /**
@@ -35,7 +51,11 @@ class adminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (\Auth::user()->type == 'admin' || \Auth::user()->type == 'superadmin')
+        {
+
+        }
+        return abort(403, 'Unauthorized.');
     }
 
     /**
@@ -46,7 +66,12 @@ class adminController extends Controller
      */
     public function show($id)
     {
-        return view('admin.show')->with('id', $id);
+        if (\Auth::user()->type == 'admin' || \Auth::user()->type == 'superadmin')
+        {
+            return view('admin.show')->with('id', $id);
+        }
+        return abort(403, 'Unauthorized.');
+
     }
 
     /**
@@ -57,7 +82,11 @@ class adminController extends Controller
      */
     public function edit($id)
     {
-        //
+        if (\Auth::user()->type == 'admin' || \Auth::user()->type == 'superadmin')
+        {
+
+        }
+        return abort(403, 'Unauthorized.');
     }
 
     /**
@@ -69,7 +98,11 @@ class adminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if (\Auth::user()->type == 'admin' || \Auth::user()->type == 'superadmin')
+        {
+
+        }
+        return abort(403, 'Unauthorized.');
     }
 
     /**
@@ -80,6 +113,10 @@ class adminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if (\Auth::user()->type == 'admin' || \Auth::user()->type == 'superadmin')
+        {
+
+        }
+        return abort(403, 'Unauthorized.');
     }
 }
