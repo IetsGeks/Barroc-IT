@@ -2,7 +2,7 @@
     @section('header-content')
         <ul class="nav-items">
             <li><a href="{{url('/admin-home')}}">Home</a></li>
-            <li><a href="{{url('/customers')}}">Customers</a></li>
+            <li><a href="{{url('/admin')}}">Active clients</a></li>
         </ul>
         <div class="department1">
             <h3>Admin</h3>

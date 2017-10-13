@@ -16,7 +16,7 @@
     <div class="header-nav-assignments">
         <ul>
             <li>home</li>
-            <li><a href="{{url()}}"></a>home</li>
+            <li><a href="{{url('/development-home')}}"></a>home</li>
         </ul>
     </div>
 </header>

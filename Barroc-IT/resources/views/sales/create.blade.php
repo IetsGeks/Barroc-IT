@@ -15,14 +15,13 @@
 <body>
 <header class="header-sales">
     <div class="row-projects-nav">
-        <div>
-            <ul class="row ul-customers">
+        <div class="header-item">
+            <ul class="nav-items">
+                <li><a href="{{url('/sales-home')}}">Home</a></li>
                 <li><a href="{{url('/projects')}}">Projects</a></li>
-                <li><a href="{{url('/customers')}}">Customers</a></li>
             </ul>
         </div>
-
-        <div class="department1">
+        <div class="header-item">
             <h3>sales department</h3>
         </div>
     </div>
