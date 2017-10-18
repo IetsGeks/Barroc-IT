@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class financeController extends Controller
 {
 
-    public function __construct()
+   public function __construct()
     {
         $this->middleware('auth');
     }
@@ -25,8 +25,8 @@ class financeController extends Controller
         $finances = \App\Finance::all();
         $projects = \App\Project::all();
         return view('finance/index')->with('finances', $finances)->with('customers', $customers)->with('projects', $projects);
-        }
-        return abort(403, 'Unauthorized.');
+       }
+       return abort(403, 'Unauthorized.');
     }
 
 
@@ -84,7 +84,7 @@ class financeController extends Controller
      */
     public function show($id)
     {
-        if (\Auth::user()->type == 'finance' || \Auth::user()->type == 'superadmin')
+       if (\Auth::user()->type == 'finance' || \Auth::user()->type == 'superadmin')
         {
 
         $user = \App\Finance::find($id);
@@ -93,8 +93,8 @@ class financeController extends Controller
         $invoices = \App\Invoice::all();
 
         return view('finance/show')->with('user', $user)->with('customers', $customers)->with('project', $projects)->with('invoices', $invoices);
-        }
-        return abort(403, 'Unauthorized.');
+       }
+       return abort(403, 'Unauthorized.');
     }
 
     /**
@@ -142,5 +142,7 @@ class financeController extends Controller
         }
         return abort(403, 'Unauthorized.');
     }
+
+
 
 }

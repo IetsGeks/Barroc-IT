@@ -15,9 +15,6 @@
 <body>
 <header class="header-sales">
     <div class="row-projects-nav">
-        <ul class="row sales-ul">
-            <li><a href="{{url('/finance/invoices')}}">Invoices</a></li>
-        </ul>
 
         <div class="department1">
             <h3>finance department</h3>

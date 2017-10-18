@@ -155,8 +155,27 @@
                         </tr>
                     @endif
                 @endforeach
-
         </table>
+
+            <h2>Add invoice</h2>
+
+            <form action="{{action('invoiceController@add_invoice', $project->project_id)}}" method="post">
+                {{csrf_field()}}
+                <input type="hidden" name="project_id" value="{{$project->project_id}}">
+                <input type="hidden" name="customer_id" value="{{$customer->customer_id}}">
+
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="text" name="amount" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" name="description" id="description" cols="30" rows="10"></textarea>
+                </div>
+
+                <input class="btn btn-success" type="submit" value="Add invoice">
+            </form>
     </div>
 </body>
 </html>
