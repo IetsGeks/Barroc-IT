@@ -51,6 +51,4 @@ Route::put('finance/{id}/complete', 'financeController@finish');
 Route::put('finance/{id}/client_inactive', 'financeController@inactivate_client');
 
 
-
 Auth::routes();
-

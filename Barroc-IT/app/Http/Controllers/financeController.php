@@ -21,12 +21,12 @@ class financeController extends Controller
     {
         if (\Auth::user()->type == 'finance' || \Auth::user()->type == 'superadmin')
         {
-            $customers = \App\Customer::all();
-            $users = \App\Finance::all();
-            return view('finance/index')->with('users', $users)->with('customers', $customers);
+        $customers = \App\Customer::all();
+        $finances = \App\Finance::all();
+        $projects = \App\Project::all();
+        return view('finance/index')->with('finances', $finances)->with('customers', $customers)->with('projects', $projects);
         }
         return abort(403, 'Unauthorized.');
-
     }
 
 
@@ -86,14 +86,15 @@ class financeController extends Controller
     {
         if (\Auth::user()->type == 'finance' || \Auth::user()->type == 'superadmin')
         {
-            $user = \App\Finance::find($id);
-            $customer = \App\Customers::find($id);
-            $projects = \App\Projects::find($id);
 
-            return view('finance/show')->with('user', $user)->with('customer', $customer)->with('project', $projects);
+        $user = \App\Finance::find($id);
+        $customers = \App\Customer::all();
+        $projects = \App\Project::find($id);
+        $invoices = \App\Invoice::all();
+
+        return view('finance/show')->with('user', $user)->with('customers', $customers)->with('project', $projects)->with('invoices', $invoices);
         }
         return abort(403, 'Unauthorized.');
-
     }
 
     /**
