@@ -12,11 +12,9 @@
 */
 
 
-Route::get('/director', function () {
+Route::get('/', function () {
     return view('director');
 });
-Route::get('/', 'adminController@index');
-
 Route::get('/sales', function () {
     return view('sales');
 });

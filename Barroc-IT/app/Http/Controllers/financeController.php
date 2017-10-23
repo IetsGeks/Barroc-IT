@@ -19,7 +19,7 @@ class financeController extends Controller
      */
     public function index()
     {
-        if (\Auth::user()->type == 'finance' || \Auth::user()->type == 'superadmin')
+        if (\Auth::user()->type == 'finance')
         {
         $customers = \App\Customer::all();
         $finances = \App\Finance::all();
@@ -32,20 +32,28 @@ class financeController extends Controller
 
     public function finish($id)
     {
+        if (\Auth::user()->type == 'finance')
+        {
         $project = \App\Project::find($id);
         $project->active = 0;
         $project->save();
 
         return redirect('finance')->with('succes', 'project is now inactive');
+        }
+        return abort(403, 'Unauthorized.');
     }
 
     public function inactivate_client($id)
     {
+        if (\Auth::user()->type == 'finance')
+        {
         $customer = \App\Customer::find($id);
         $customer->active = 0;
         $customer->save();
 
         return redirect('finance')->with('succes', 'client is now inactive');
+        }
+        return abort(403, 'Unauthorized.');
     }
     /**
      * Show the form for creating a new resource.
@@ -54,7 +62,7 @@ class financeController extends Controller
      */
     public function create()
     {
-        if (\Auth::user()->type == 'finance' || \Auth::user()->type == 'superadmin')
+        if (\Auth::user()->type == 'finance')
         {
 
         }
@@ -69,7 +77,7 @@ class financeController extends Controller
      */
     public function store(Request $request)
     {
-        if (\Auth::user()->type == 'finance' || \Auth::user()->type == 'superadmin')
+        if (\Auth::user()->type == 'finance')
         {
 
         }
@@ -84,7 +92,7 @@ class financeController extends Controller
      */
     public function show($id)
     {
-       if (\Auth::user()->type == 'finance' || \Auth::user()->type == 'superadmin')
+       if (\Auth::user()->type == 'finance')
         {
 
         $user = \App\Finance::find($id);
@@ -105,7 +113,7 @@ class financeController extends Controller
      */
     public function edit($id)
     {
-        if (\Auth::user()->type == 'finance' || \Auth::user()->type == 'superadmin')
+        if (\Auth::user()->type == 'finance')
         {
 
         }
@@ -121,7 +129,7 @@ class financeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (\Auth::user()->type == 'finance' || \Auth::user()->type == 'superadmin')
+        if (\Auth::user()->type == 'finance')
         {
 
         }
@@ -136,7 +144,7 @@ class financeController extends Controller
      */
     public function destroy($id)
     {
-        if (\Auth::user()->type == 'finance' || \Auth::user()->type == 'superadmin')
+        if (\Auth::user()->type == 'finance')
         {
 
         }

@@ -20,7 +20,7 @@ class customerController extends Controller
      */
     public function index()
     {
-        if (\Auth::user()->type == 'sales' || \Auth::user()->type == 'superadmin')
+        if (\Auth::user()->type == 'sales')
         {
             $customers = \App\Customer::all();
 
@@ -38,7 +38,7 @@ class customerController extends Controller
      */
     public function create()
     {
-        if (\Auth::user()->type == 'sales' || \Auth::user()->type == 'superadmin')
+        if (\Auth::user()->type == 'sales')
         {
             return view('sales/create');
         }
@@ -53,7 +53,7 @@ class customerController extends Controller
      */
     public function store(Request $request)
     {
-        if (\Auth::user()->type == 'sales' || \Auth::user()->type == 'superadmin')
+        if (\Auth::user()->type == 'sales')
         {
             $this->validate($request, [
                 "c_name" => 'string|nullable',
@@ -98,7 +98,7 @@ class customerController extends Controller
      */
     public function show($id)
     {
-        if (\Auth::user()->type == 'sales' || \Auth::user()->type == 'superadmin')
+        if (\Auth::user()->type == 'sales')
         {
             $customer = \App\Customer::find($id);
             $projects = \App\Project::all();
@@ -127,7 +127,7 @@ class customerController extends Controller
      */
     public function edit($id)
     {
-        if (\Auth::user()->type == 'sales' || \Auth::user()->type == 'superadmin')
+        if (\Auth::user()->type == 'sales')
         {
 
         }
@@ -143,7 +143,7 @@ class customerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (\Auth::user()->type == 'sales' || \Auth::user()->type == 'superadmin')
+        if (\Auth::user()->type == 'sales')
         {
 
         }
@@ -158,7 +158,7 @@ class customerController extends Controller
      */
     public function destroy($id)
     {
-        if (\Auth::user()->type == 'sales' || \Auth::user()->type == 'superadmin')
+        if (\Auth::user()->type == 'sales')
         {
 
         }

@@ -19,7 +19,7 @@ class adminController extends Controller
      */
     public function index()
     {
-        if (\Auth::user()->type == 'admin' || \Auth::user()->type == 'superadmin')
+        if (\Auth::user()->type == 'admin')
         {
             //$users = \App\Customer::all();
             return view('admin');
@@ -36,7 +36,7 @@ class adminController extends Controller
      */
     public function create()
     {
-        if (\Auth::user()->type == 'admin' || \Auth::user()->type == 'superadmin')
+        if (\Auth::user()->type == 'admin')
         {
 
         }
@@ -51,7 +51,7 @@ class adminController extends Controller
      */
     public function store(Request $request)
     {
-        if (\Auth::user()->type == 'admin' || \Auth::user()->type == 'superadmin')
+        if (\Auth::user()->type == 'admin')
         {
 
         }
@@ -66,7 +66,7 @@ class adminController extends Controller
      */
     public function show($id)
     {
-        if (\Auth::user()->type == 'admin' || \Auth::user()->type == 'superadmin')
+        if (\Auth::user()->type == 'admin')
         {
             return view('admin.show')->with('id', $id);
         }
@@ -82,7 +82,7 @@ class adminController extends Controller
      */
     public function edit($id)
     {
-        if (\Auth::user()->type == 'admin' || \Auth::user()->type == 'superadmin')
+        if (\Auth::user()->type == 'admin')
         {
 
         }
@@ -98,7 +98,7 @@ class adminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (\Auth::user()->type == 'admin' || \Auth::user()->type == 'superadmin')
+        if (\Auth::user()->type == 'admin')
         {
 
         }
@@ -113,7 +113,7 @@ class adminController extends Controller
      */
     public function destroy($id)
     {
-        if (\Auth::user()->type == 'admin' || \Auth::user()->type == 'superadmin')
+        if (\Auth::user()->type == 'admin')
         {
 
         }

@@ -31,7 +31,15 @@
     {{--<div class="row-projects-nav">--}}
         <div class="row-between">
             @yield('header-content')
-            
+            <a href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                <button>Logout</button>
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
         </div>
     </div>
 </header>

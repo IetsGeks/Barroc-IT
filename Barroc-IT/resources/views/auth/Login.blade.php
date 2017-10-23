@@ -18,11 +18,11 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
     </head>
-    {{ dd($errors) }}
+
     <body>
         <div class="jumbotron jumbo-login">
             <div class="container">
-                <h1 class="text_1 text-center">BARROC IT. </h1>
+                <h1 class="text_1 text-center">BARROC IT.</h1>
                 @guest
                 <form method="POST" action="{{ route('login') }}" class="form-login col-md-4 col-md-offset-4">
                     {{ csrf_field() }}
@@ -56,15 +56,6 @@
                 </form>
                 @else
                     @endguest
-                    <a href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                        Logout
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        {{ csrf_field() }}
-                    </form>
 
                 <div class="helptxt" id="hidden">
                     <div class="helptxtnl">
