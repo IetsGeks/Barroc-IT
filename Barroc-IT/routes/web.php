@@ -48,6 +48,7 @@ Route::resource('finance', 'financeController');
 Route::put('finance/{id}/complete', 'financeController@finish');
 Route::put('finance/{id}/client_inactive', 'financeController@inactivate_client');
 Route::post('finance/{id}/add_invoice', 'invoiceController@add_invoice');
+Route::put('admin/{id}/activate', 'adminController@activate_client');
 
 
 Auth::routes();

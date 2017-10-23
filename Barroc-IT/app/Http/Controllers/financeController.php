@@ -24,7 +24,8 @@ class financeController extends Controller
         $customers = \App\Customer::all();
         $finances = \App\Finance::all();
         $projects = \App\Project::all();
-        return view('finance/index')->with('finances', $finances)->with('customers', $customers)->with('projects', $projects);
+        $invoices = \App\Invoice::all();
+        return view('finance/index')->with('finances', $finances)->with('customers', $customers)->with('projects', $projects)->with('invoices', $invoices);
        }
        return abort(403, 'Unauthorized.');
     }

@@ -18,52 +18,31 @@
             </div>
         </div>
     </header>
-
+    @if(session('succes'))
+        <ul class="list-group-item-success">
+                <li class="list-group-item-success">{{session('succes')}}</li>
+        </ul>
+    @endif
     <div class="container">
         <div class="customers">
-            <h3>clients</h3>
-
-            <div class="row-set-admin">
-                <h5>bedrijfsnaam</h5>
-                <h5>naam</h5>
-                <h5>plaats</h5>
-            </div>
-            {{-- --}}
-
-            <div class="row-lists">
-
-                <ul class="list-group">
-                    <li class="list-group-item">kersemus</li>
-                    <li class="list-group-item">kersemus</li>
-                    <li class="list-group-item">kersemus</li>
-                    <li class="list-group-item">kersemus</li>
-                    <li class="list-group-item">kersemus</li>
-                </ul>
-
-                <ul class="list-group">
-                    <li class="list-group-item">tiny en lau</li>
-                    <li class="list-group-item">tiny en lau</li>
-                    <li class="list-group-item">tiny en lau</li>
-                    <li class="list-group-item">tiny en lau</li>
-                    <li class="list-group-item">tiny en lau</li>
-                </ul>
-                {{--<div class="btn-list">--}}
-                    {{--<button class="btn-primary">set</button>--}}
-                    {{--<button class="btn-primary">set</button>--}}
-                    {{--<button class="btn-primary">set</button>--}}
-                    {{--<button class="btn-primary">set</button>--}}
-                    {{--<button class="btn-primary">set</button>--}}
-                {{--</div>--}}
-                <ul class="list-group">
-                    <li class="list-group-item">breda</li>
-                    <li class="list-group-item">breda</li>
-                    <li class="list-group-item">breda</li>
-                    <li class="list-group-item">breda</li>
-                    <li class="list-group-item">breda</li>
-                </ul>
-
-
-            </div>
+            <h3>Inactive clients</h3>
+            <table class="table table-striped">
+                @foreach($users as $customer)
+                    @if($customer->active == 0)
+                        <tr>
+                            <th>company name</th>
+                            <td>{{$customer->company_name}}</td>
+                            <td>
+                                <form method="post" action="{{action('adminController@activate_client', $customer->customer_id )}}">
+                                    {{csrf_field()}}
+                                    {{method_field('PUT')}}
+                                    <input name="activate" type="submit" value="set client active" class="btn btn-success">
+                                </form>
+                            </td>
+                        </tr>
+                    @endif
+                @endforeach
+            </table>
         </div>
 
         <div class="departments">
