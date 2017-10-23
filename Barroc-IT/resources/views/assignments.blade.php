@@ -17,12 +17,45 @@
 </head>
 <body>
 <header class="header-development">
-    <div class="header-nav-assignments">
-        <ul>
-            <li>home</li>
-            <li><a href="{{url('/development-home')}}"></a>home</li>
-        </ul>
+    <div class="container">
+        <div class="row-between">
+            <div class="header-nav-assignments row">
+                <ul class="nav-assignments-items">
+                    <li><a href="{{url('/development-home')}}">Home</a></li>
+                    <li><a href="{{url('/assignments')}}">Assignments</a></li>
+                </ul>
+            </div>
+            <div class="departments">
+                <h3>Development</h3>
+            </div>
+        </div>
     </div>
 </header>
+<div class="banner">
+    <div class="wrapper">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>NAME</th>
+                    <th>PR.NAME</th>
+                    <th>DESCRIPTION</th>
+                    <th>DATE</th>
+                    <th>FINISHED</th>
+                </tr>
+                <tr>
+                    <td>klaas</td>
+                    <td>fifa</td>
+                    <td>maak een fifa spel</td>
+                    <td>01-09-2000</td>
+                    <td>ja</td>
+                </tr>
+                </thead>
+            </table>
+        </div>
+
+    </div>
+</div>
+
 </body>
 </html>
