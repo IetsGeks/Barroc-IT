@@ -1,3 +1,6 @@
+@if (\Auth::user()->type != 'finance')
+    {{ abort(403, 'Unauthorized.') }}
+@endif
 
 @extends('master-home')
     @section('header-content')

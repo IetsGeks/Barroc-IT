@@ -1,3 +1,7 @@
+@if (\Auth::user()->type != 'development')
+{{ abort(403, 'Unauthorized.') }}
+@endif
+
 <!doctype html>
 <html lang="en">
 <head>

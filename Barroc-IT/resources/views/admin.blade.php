@@ -1,3 +1,7 @@
+@if (\Auth::user()->type != 'admin')
+    {{ abort(403, 'Unauthorized.') }}
+@endif
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,20 +22,23 @@
             </div>
         </div>
     </header>
-    @if(session('succes'))
-        <ul class="list-group-item-success">
-                <li class="list-group-item-success">{{session('succes')}}</li>
-        </ul>
-    @endif
     <div class="container">
+        @if(session('succes'))
+            <ul class="list-group-item-success">
+                <li class="list-group-item-success">{{session('succes')}}</li>
+            </ul>
+        @endif
+
         <div class="customers">
             <h3>Inactive clients</h3>
             <table class="table table-striped">
                 @foreach($users as $customer)
                     @if($customer->active == 0)
                         <tr>
-                            <th>company name</th>
-                            <td>{{$customer->company_name}}</td>
+                            <td>{{ $customer->contact_person }}</td>
+                            <td>{{ $customer->company_name }}</td>
+                            <td>{{ $customer->email }}</td>
+                            <td>{{ $customer->telephone_number }}</td>
                             <td>
                                 <form method="post" action="{{action('adminController@activate_client', $customer->customer_id )}}">
                                     {{csrf_field()}}
@@ -43,15 +50,6 @@
                     @endif
                 @endforeach
             </table>
-        </div>
-
-        <div class="departments">
-            <h3>Departments</h3>
-            <ul >
-                <li class="list-group-item"><a href="{{'/sales'}}">Sales</a></li>
-                <li class="list-group-item"><a href="">Finance</a></li>
-                <li class="list-group-item"><a href="">Development</a></li>
-            </ul>
         </div>
     </div>
 </body>
