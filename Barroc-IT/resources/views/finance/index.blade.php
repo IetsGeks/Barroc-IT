@@ -72,8 +72,38 @@
                 @endif
             @endforeach
         @endforeach
-@endforeach
+    @endforeach
 
+    <div class="invoices-section">
+        <h3>Open invoices</h3>
+
+        <table class="table table-striped">
+
+            @foreach($invoices as $invoice)
+
+                    @if($customer->active == 1 && $invoice->paid == 0)
+                        <tr>
+                            @foreach($customers as $customer)
+                                @if($invoice->customer_id == $customer->customer_id)
+                                    <th>Company name:</th>
+                                    <td>{{$customer->company_name}}</td>
+                                @endif
+                            @endforeach
+                            <th>Project id:</th>
+                            <td>{{$invoice->project_id}}</td>
+
+                            <th>Invoice amount:</th>
+                            <td>€{{$invoice->amount}},-</td>
+
+                            <th>Description:</th>
+                            <td>{{$invoice->description}}</td>
+                        </tr>
+                    @endif
+
+            @endforeach
+
+        </table>
+    </div>
 
 </div>
 </body>

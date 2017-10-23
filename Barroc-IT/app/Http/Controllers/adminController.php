@@ -21,9 +21,9 @@ class adminController extends Controller
     {
         if (\Auth::user()->type == 'admin' || \Auth::user()->type == 'superadmin')
         {
-            //$users = \App\Customer::all();
-            return view('admin');
-            // ->with('users', $users);
+            $users = \App\Customer::all();
+            return view('admin')->with('users', $users);
+
         }
         return abort(403, 'Unauthorized.');
 
@@ -103,8 +103,19 @@ class adminController extends Controller
 
         }
         return abort(403, 'Unauthorized.');
+
+
+
     }
 
+    public function activate_client($id)
+    {
+        $customer = \App\Customer::find($id);
+        $customer->active = 1;
+        $customer->save();
+
+        return redirect('admin')->with('succes', 'client activated succefully');
+    }
     /**
      * Remove the specified resource from storage.
      *
