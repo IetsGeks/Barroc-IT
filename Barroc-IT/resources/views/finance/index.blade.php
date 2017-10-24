@@ -79,7 +79,7 @@
 
         <table class="table table-striped">
 
-            @foreach($invoices as $invoice)
+            @foreach($invoices->sortBy('customer_id') as $invoice)
 
                     @if($customer->active == 1 && $invoice->paid == 0)
                         <tr>
@@ -97,6 +97,14 @@
 
                             <th>Description:</th>
                             <td>{{$invoice->description}}</td>
+
+                            <td>
+                                <form method="post" action="{{action('financeController@set_paid', $invoice->id )}}">
+                                    {{csrf_field()}}
+                                    {{method_field('PUT')}}
+                                    <input name="activate" type="submit" value="paid" class="btn btn-success">
+                                </form>
+                            </td>
                         </tr>
                     @endif
 

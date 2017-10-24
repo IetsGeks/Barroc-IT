@@ -29,13 +29,11 @@
 
 
             @foreach($customers as $customer)
-
                     @if($user->project_id == $project->project_id )
                         @if($project->customer_id == $customer->customer_id)
                             <h2>Company: {{$customer->company_name}}</h2>
                         @endif
                     @endif
-
             @endforeach
 
         <table class="table table-striped">

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class financeController extends Controller
 {
 
-   public function __construct()
+    public function __construct()
     {
         $this->middleware('auth');
     }
@@ -55,6 +55,14 @@ class financeController extends Controller
         return redirect('finance')->with('succes', 'client is now inactive');
         }
         return abort(403, 'Unauthorized.');
+    }
+
+    public function set_paid($id)
+    {
+        $invoice = \App\Invoice::find($id);
+        $invoice->paid = 1;
+        $invoice->save();
+        return redirect('finance');
     }
     /**
      * Show the form for creating a new resource.
