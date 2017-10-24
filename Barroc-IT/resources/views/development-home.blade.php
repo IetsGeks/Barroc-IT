@@ -1,3 +1,7 @@
+@if (\Auth::user()->type != 'development')
+    {{ abort(403, 'Unauthorized.') }}
+@endif
+
 @extends('master-home')
     @section('header-content')
         <ul class="nav-items">

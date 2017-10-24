@@ -1,3 +1,7 @@
+@if (\Auth::user()->type != 'sales' || \Auth::user()->type != 'development' || \Auth::user()->type != 'finance')
+{{ abort(403, 'Unauthorized.') }}
+@endif
+
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>

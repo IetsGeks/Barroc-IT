@@ -1,3 +1,7 @@
+@if (\Auth::user()->type != 'sales')
+    {{ abort(403, 'Unauthorized.') }}
+@endif
+
 @extends('master-home')
 
     @section('header-content')
@@ -17,7 +21,7 @@
             <div class="sales-links">
                 <ul class="sales-links-items">
                     <li><a href="{{url('sales/create')}}">add customer</a></li>
-                    <li><a href="{{url('sales/index')}}">search customer</a></li>
+                    <li><a href="{{url('sales')}}">search customer</a></li>
                 </ul>
             </div>
         </div>
