@@ -12,21 +12,11 @@
     <link rel="stylesheet" href="{{asset('css/show-finance.css')}}">
 </head>
 <body>
-<header class="header-sales">
-    <div class="row-projects-nav">
-        <ul class="row sales-ul">
-            <li><a href="{{url('/projects')}}">Projects</a></li>
-            <li><a href="{{url('/customers')}}">customers</a></li>
-        </ul>
-
-        <div class="department1">
-            <h3>finance department</h3>
-        </div>
-    </div>
-</header>
 
     <div class="container">
 
+
+        <a href="{{ url()->previous() }}" class="btn btn-success">Back</a>
 
             @foreach($customers as $customer)
                     @if($user->project_id == $project->project_id )
@@ -91,14 +81,35 @@
                 @else
                     <th class="success">limit</th>
                     <td class="success">{{$user->limit}}</td>
+
                 @endif
+
             </tr>
+
+
+
             <tr>
                 <th>Sales amount</th>
                 <td>{{$user->sales_amount}}</td>
             </tr>
 
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <form action="{{action('financeController@update', $project->project_id)}}" method="post">
+                                {{csrf_field()}}
+                                {{method_field('PUT')}}
+                                <label for="">Enter limit:</label>
+                                <input type="hidden" value="{{$project->project_id}}" name="project_id">
+                                <input class="form-control" type="text" class="list-group" name="limit">
+                                <input type="submit" class="btn-danger btn" value="Set limit">
+                            </form>
+                        </div>
+                    </td>
+                </tr>
         </table>
+
+
 
             <form action="{{action('financeController@inactivate_client', $project->customer_id) }}" method="post">
                 {{csrf_field()}}
