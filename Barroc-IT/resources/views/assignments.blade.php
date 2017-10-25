@@ -37,19 +37,19 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th>NAME</th>
-                    <th>PR.NAME</th>
-                    <th>DESCRIPTION</th>
-                    <th>DATE</th>
+                    <th>C.NAME</th>
+                    <th>APPLICATIONS</th>
+                    <th>HARDWARE</th>
                     <th>FINISHED</th>
                 </tr>
-                <tr>
-                    <td>klaas</td>
-                    <td>fifa</td>
-                    <td>maak een fifa spel</td>
-                    <td>01-09-2000</td>
-                    <td>ja</td>
-                </tr>
+                @foreach($projects as $project)
+                    <tr>
+                        <td>{{$project->customer->customer_name}}</td>
+                        <td>{{$project->applications}}</td>
+                        <td>{{$project->hardware}}</td>
+                        <td @if($project->active == 0) class="list-group-item-danger" @else class="list-group-item-success" @endif>{{$project->active}}</td>
+                    </tr>
+                @endforeach
                 </thead>
             </table>
         </div>

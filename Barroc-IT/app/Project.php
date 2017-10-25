@@ -12,7 +12,6 @@ class Project extends Model
 
     public function customer()
     {
-        return $this->belongsToMany('\App\Project', $table = 'tbl_customers', $foreignPivotKey = 'customer_id',
-            $relatedPivotKey = 'customer_id');
+        return $this->belongsTo('\App\Customer', 'project_id');
     }
 }

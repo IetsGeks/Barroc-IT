@@ -33,10 +33,10 @@ Route::get('/development-home', function (){
 Route::get('/admin-home', function (){
     return view('admin-home');
 });
-Route::get('/assignments', function (){
+Route::get('assignments', function (){
     return view('assignments');
 });
-
+Route::resource('assignments', 'assignmentController');
 Route::resource('admin', 'adminController');
 Route::resource('sales', 'customerController');
 Route::resource('finance', 'financeController');
