@@ -119,6 +119,20 @@ class customerController extends Controller
         return abort(403, 'Unauthorized.');
     }
 
+    public function projects()
+    {
+        if (\Auth::user()->type == 'sales')
+        {
+            $projects = \App\Project::all();
+            $customers = \App\Customer::all();
+
+            return view('sales/projects')
+                ->with('customer', $customers)
+                ->with('projects', $projects);
+        }
+        return abort(403, 'Unauthorized.');
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

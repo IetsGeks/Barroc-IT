@@ -19,12 +19,19 @@
 
 
 <body>
-    <header class="header-sales">
-        <ul class="row ul-customers">
-            <li><a href="{{url('/projects')}}">Projects</a></li>
-            <li><a href="{{url('/customers')}}">Customers</a></li>
-        </ul>
-    </header>
+<header class="header-sales">
+    <div class="row-projects-nav">
+        <div class="header-item">
+            <ul class="nav-items">
+                <li><a href="{{url('/sales-home')}}">Home</a></li>
+                <li><a href="{{url('/projects')}}">Projects</a></li>
+            </ul>
+        </div>
+        <div class="header-item">
+            <h3>sales department</h3>
+        </div>
+    </div>
+</header>
     <div class="wrapper">
         <form action="" method="get" class="form">
             <input class="searchB form-control" type="text" id="searchC" name="searchC" placeholder="Search">

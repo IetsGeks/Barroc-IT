@@ -6,7 +6,7 @@
     @section('header-content')
         <ul class="nav-items">
             <li><a href="{{url('/finance-home')}}">Home</a></li>
-            <li><a href="{{url('/projects')}}">Limits</a></li>
+            <li><a href="{{url('/finance')}}">Limits</a></li>
         </ul>
         <div class="department1">
             <h3>finance</h3>

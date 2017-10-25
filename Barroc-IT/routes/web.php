@@ -37,6 +37,7 @@ Route::get('/assignments', function (){
     return view('assignments');
 });
 
+Route::get('sales/projects', 'customerController@projects');
 Route::resource('admin', 'adminController');
 Route::resource('sales', 'customerController');
 Route::resource('finance', 'financeController');
