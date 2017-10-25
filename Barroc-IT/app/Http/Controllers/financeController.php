@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 class financeController extends Controller
 {
 
-   public function __construct()
-    {
-        $this->middleware('auth');
-    }
+//    public function __construct()
+//    {
+//        $this->middleware('auth');
+//    }
 
     /**
      * Display a listing of the resource.
@@ -19,15 +19,15 @@ class financeController extends Controller
      */
     public function index()
     {
-        if (\Auth::user()->type == 'finance')
-        {
+//        if (\Auth::user()->type == 'finance')
+//        {
         $customers = \App\Customer::all();
         $finances = \App\Finance::all();
         $projects = \App\Project::all();
         $invoices = \App\Invoice::all();
         return view('finance/index')->with('finances', $finances)->with('customers', $customers)->with('projects', $projects)->with('invoices', $invoices);
-       }
-       return abort(403, 'Unauthorized.');
+//       }
+//       return abort(403, 'Unauthorized.');
     }
 
 
@@ -56,6 +56,14 @@ class financeController extends Controller
         }
         return abort(403, 'Unauthorized.');
     }
+
+    public function set_paid($id)
+    {
+        $invoice = \App\Invoice::find($id);
+        $invoice->paid = 1;
+        $invoice->save();
+        return redirect('finance');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -78,13 +86,17 @@ class financeController extends Controller
      */
     public function store(Request $request)
     {
-        if (\Auth::user()->type == 'finance')
-        {
+//        if (\Auth::user()->type == 'finance')
+//        {
+//
+//        }
+//        return abort(403, 'Unauthorized.');
 
-        }
-        return abort(403, 'Unauthorized.');
     }
+    public function set_limit($id, Request $request)
+    {
 
+    }
     /**
      * Display the specified resource.
      *
@@ -93,8 +105,8 @@ class financeController extends Controller
      */
     public function show($id)
     {
-       if (\Auth::user()->type == 'finance')
-        {
+//       if (\Auth::user()->type == 'finance')
+//        {
 
         $user = \App\Finance::find($id);
         $customers = \App\Customer::all();
@@ -102,9 +114,10 @@ class financeController extends Controller
         $invoices = \App\Invoice::all();
 
         return view('finance/show')->with('user', $user)->with('customers', $customers)->with('project', $projects)->with('invoices', $invoices);
-       }
-       return abort(403, 'Unauthorized.');
+//       }
+//       return abort(403, 'Unauthorized.');
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -114,11 +127,13 @@ class financeController extends Controller
      */
     public function edit($id)
     {
-        if (\Auth::user()->type == 'finance')
-        {
+//        if (\Auth::user()->type == 'finance')
+//        {
+//
+//        }
+//        return abort(403, 'Unauthorized.');
 
-        }
-        return abort(403, 'Unauthorized.');
+
     }
 
     /**
@@ -130,11 +145,22 @@ class financeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (\Auth::user()->type == 'finance')
-        {
+//        if (\Auth::user()->type == 'finance')
+//        {
+//
+//        }
+//        return abort(403, 'Unauthorized.');
+        $this->validate($request, [
+            'limit' => 'required|integer'
+        ]);
+        $project = \App\Finance::find($id);
 
+        if ($request->project_id == $project->project_id )
+        {
+            $project->limit = $request->limit;
+            $project->save();
         }
-        return abort(403, 'Unauthorized.');
+        return redirect('finance');
     }
 
     /**
