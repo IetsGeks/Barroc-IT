@@ -24,6 +24,7 @@
             <div class="container">
                 <h1 class="text_1 text-center">BARROC IT.</h1>
                 @guest
+                
                 <form method="POST" action="{{ route('login') }}" class="form-login col-md-4 col-md-offset-4">
                     {{ csrf_field() }}
                     <legend class="subhead">Please Log in</legend>

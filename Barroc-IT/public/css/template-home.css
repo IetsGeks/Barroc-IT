@@ -24,6 +24,15 @@ body{
     margin: 0 auto;
 }
 
+button{
+    background-color: #808080;
+    border: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 30px;
+    color: whitesmoke;
+}
+
 /*===HEADER===*/
 .header-sales{
     background-color: rgba(118, 118, 118, 0.7);;
