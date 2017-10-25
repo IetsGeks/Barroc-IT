@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 class financeController extends Controller
 {
 
-//    public function __construct()
-//    {
-//        $this->middleware('auth');
-//    }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Display a listing of the resource.
@@ -19,15 +19,15 @@ class financeController extends Controller
      */
     public function index()
     {
-//        if (\Auth::user()->type == 'finance')
-//        {
+        if (\Auth::user()->type == 'finance')
+        {
         $customers = \App\Customer::all();
         $finances = \App\Finance::all();
         $projects = \App\Project::all();
         $invoices = \App\Invoice::all();
         return view('finance/index')->with('finances', $finances)->with('customers', $customers)->with('projects', $projects)->with('invoices', $invoices);
-//       }
-//       return abort(403, 'Unauthorized.');
+       }
+       return abort(403, 'Unauthorized.');
     }
 
 
@@ -86,11 +86,11 @@ class financeController extends Controller
      */
     public function store(Request $request)
     {
-//        if (\Auth::user()->type == 'finance')
-//        {
-//
-//        }
-//        return abort(403, 'Unauthorized.');
+        if (\Auth::user()->type == 'finance')
+        {
+
+        }
+        return abort(403, 'Unauthorized.');
 
     }
     public function set_limit($id, Request $request)
@@ -127,11 +127,11 @@ class financeController extends Controller
      */
     public function edit($id)
     {
-//        if (\Auth::user()->type == 'finance')
-//        {
-//
-//        }
-//        return abort(403, 'Unauthorized.');
+        if (\Auth::user()->type == 'finance')
+        {
+
+        }
+        return abort(403, 'Unauthorized.');
 
 
     }
