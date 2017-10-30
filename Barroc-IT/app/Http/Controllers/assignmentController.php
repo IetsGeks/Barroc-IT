@@ -10,7 +10,12 @@ class assignmentController extends Controller
 
     public function index(){
         $projects = \App\Project::all();
-        return view('assignments')->with('projects', $projects);
+        $customers = \App\Customer::all();
+
+
+        return view('assignments')
+            ->with('projects', $projects)
+            ->with('customers', $customers);
     }
 
 }
