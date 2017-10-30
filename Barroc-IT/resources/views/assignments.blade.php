@@ -44,7 +44,7 @@
                 </tr>
                 @foreach($projects as $project)
                     <tr>
-                        <td>{{$project->customer->customer_name}}</td>
+                        <td>{{strpos($customers, $project->project_id)}}</td> {{-- this does not work yet --}}
                         <td>{{$project->applications}}</td>
                         <td>{{$project->hardware}}</td>
                         <td @if($project->active == 0) class="list-group-item-danger" @else class="list-group-item-success" @endif>{{$project->active}}</td>
