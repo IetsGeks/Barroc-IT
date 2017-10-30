@@ -1,0 +1,82 @@
+body{
+    background-image: url('../img/jumbotron.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.jumbotron {
+    margin-top: 0px;
+    height: 600px;
+    margin-bottom: 0px;
+    background: none;
+}
+
+.jumbotron .container h1 {
+    position: relative;
+    text-shadow: 2px 2px 3px black;
+    color: gray;
+    line-height: 0.8em;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text_1 {
+    margin: 0 auto;
+    margin-top: 110px;
+    margin-bottom: 10px;
+}
+
+.subhead {
+    color : #CFC1B5;
+    text-shadow: 1px 1px 1px black;
+}
+
+form {
+    color: #CFC1B5;
+    margin-bottom: 20px;
+}
+
+input.form-control, textarea.form-control {
+    border-radius: 0px;
+    border-color: #CFC1B5;
+    box-shadow:  1px 1px 2px black;
+    padding: 20px 10px;
+}
+
+.btn-primary {
+    background: #CFC1B5;
+    border: 0px;
+    border-radius: 0px;
+}
+
+.form-login {
+    background: rgba(0,0,0,0.4);
+    margin-top: 50px;
+    padding-bottom: 15px;
+}
+
+.form-group:Last-Of-Type{
+    margin-bottom: 0;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: row;
+}
+
+login {
+    height: 100vh;
+    background-position: -40px 0px;
+}
+
+@media only screen and (min-width: 992px){
+    .helptxt{
+        width: 300px;
+        float: right;
+        margin-top: 50px;
+    }
+}

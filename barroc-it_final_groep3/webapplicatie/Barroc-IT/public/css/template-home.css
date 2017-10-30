@@ -1,0 +1,127 @@
+/*===default===*/
+body{
+    background-image: url("../img/jumbotron.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.container{
+    width: 960px;
+    margin: 0 auto;
+}
+
+.row-around{
+    display: flex;
+    justify-content: space-around;
+}
+.row-between{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-wrapper{
+    width: 1300px;
+    margin: 0 auto;
+}
+
+button{
+    background-color: #808080;
+    border: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 30px;
+    color: black;
+    visibility: visible;
+}
+
+/*===HEADER===*/
+.header-sales{
+    background-color: rgba(118, 118, 118, 0.7);;
+    height: 100px;
+    display: flex;
+
+}
+.header-sales ul{
+    margin-top: 35px;
+}
+.nav-items  li{
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 20px;
+}
+.nav-items a{
+    text-decoration: none;
+    color: white;
+}
+
+.department1 h3{
+    color: white;
+    font-size: 18px;
+    margin-top: 32px;
+}
+/*=========*/
+
+/*===banner===*/
+
+.banner {
+    display: flex;
+    justify-content: center;
+}
+.banner-content h3 {
+    margin-top: 25%;
+    text-align: center;
+
+    font-family: "Arial";
+}
+
+.banner-content p{
+    margin-top: 0%;
+    color: #000;
+    text-align: center;
+}
+
+.sales-links-items{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.sales-links-items a{
+    text-decoration: none;
+    color: white;
+    background-color: #808080;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+
+/*=========*/
+
+/*===footer===*/
+
+.row-footer{
+    padding-top: 10px;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.79);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.item{
+    width: 15%;
+    margin-bottom: 10px;
+
+}
+.row-footer h5{
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #fff;
+
+}
+.row-footer p{
+    color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+
+
+}
