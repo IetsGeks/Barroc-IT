@@ -105,8 +105,8 @@ class financeController extends Controller
      */
     public function show($id)
     {
-//       if (\Auth::user()->type == 'finance')
-//        {
+       if (\Auth::user()->type == 'finance')
+        {
 
         $user = \App\Finance::find($id);
         $customers = \App\Customer::all();
@@ -114,8 +114,8 @@ class financeController extends Controller
         $invoices = \App\Invoice::all();
 
         return view('finance/show')->with('user', $user)->with('customers', $customers)->with('project', $projects)->with('invoices', $invoices);
-//       }
-//       return abort(403, 'Unauthorized.');
+       }
+       return abort(403, 'Unauthorized.');
     }
 
 

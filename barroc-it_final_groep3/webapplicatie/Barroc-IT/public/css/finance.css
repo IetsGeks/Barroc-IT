@@ -1,0 +1,44 @@
+*{
+    text-align: center;
+}
+.container{
+    padding: 0;
+}
+.succes{
+    background: lawngreen;
+    font-size: 20px;
+}
+.danger{
+    background: red;
+    font-size: 20px;
+
+}
+.outcome{
+    display: flex;
+    justify-content: space-around;
+
+}
+.outcome-danger{
+    background: red;
+    font-size: 20px;
+}
+.outcome-succes{
+    background: lawngreen;
+    font-size: 20px;
+}
+.outcome p{
+    width: 200px;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+
+}
+.row li{
+    width: 200px;
+    border: none;
+}
+.row li:nth-child(2)
+{
+    margin-left: 6%;
+}

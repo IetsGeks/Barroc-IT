@@ -1,0 +1,29 @@
+.header-development{
+    background-color: #808080;
+    height: 100px;
+}
+
+.header-nav-assignments li a{
+    text-decoration: none;
+    color: white;
+}
+
+.header-nav-assignments li{
+    font-size: 18px;
+    padding: 0;
+
+}
+.departments h3{
+    margin: 0;
+    color: white;
+}
+.nav-assignments-items{
+    display: flex;
+    justify-content: space-between;
+}
+
+.row-between{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
